@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="RhythmSong" format=3 uid="uid://c2r540ibs2hdc"]
+
+[ext_resource type="Script" uid="uid://e13yv6wrw13f" path="res://addons/rhythm_generator/rhythm_song.gd" id="1_f0a88"]
+[ext_resource type="Script" uid="uid://ckholaxaj3dpf" path="res://addons/rhythm_generator/rhythm_timing_window.gd" id="2_eg5lw"]
+
+[sub_resource type="Resource" id="Resource_f0a88"]
+script = ExtResource("2_eg5lw")
+timestamp = 6.224399
+
+[sub_resource type="Resource" id="Resource_eg5lw"]
+script = ExtResource("2_eg5lw")
+timestamp = 10.406893253326416
+
+[sub_resource type="Resource" id="Resource_02m4l"]
+script = ExtResource("2_eg5lw")
+timestamp = 12.480725765228271
+
+[sub_resource type="Resource" id="Resource_ha84k"]
+script = ExtResource("2_eg5lw")
+timestamp = 14.513923168182373
+
+[sub_resource type="Resource" id="Resource_41wyy"]
+script = ExtResource("2_eg5lw")
+timestamp = 16.4644
+
+[sub_resource type="Resource" id="Resource_n5bh3"]
+script = ExtResource("2_eg5lw")
+timestamp = 18.427937
+
+[sub_resource type="Resource" id="Resource_eguxh"]
+script = ExtResource("2_eg5lw")
+timestamp = 20.497414588928223
+
+[resource]
+script = ExtResource("1_f0a88")
+timing_windows = Array[ExtResource("2_eg5lw")]([SubResource("Resource_f0a88"), SubResource("Resource_eg5lw"), SubResource("Resource_02m4l"), SubResource("Resource_ha84k"), SubResource("Resource_41wyy"), SubResource("Resource_n5bh3"), SubResource("Resource_eguxh")])

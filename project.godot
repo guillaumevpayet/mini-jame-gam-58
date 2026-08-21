@@ -16,6 +16,10 @@ run/main_scene="uid://cwdsbytvi8rys"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://1kfaf0n0ljhm"
+
 [display]
 
 window/stretch/mode="canvas_items"

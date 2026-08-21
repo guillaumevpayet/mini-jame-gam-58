@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dee825ouk363p"]
+
+[node name="MusicScene" type="Control" unique_id=55113008]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicReader" type="Node" parent="." unique_id=950233280]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=870940673]
+bus = &"MusicVisualiser"
