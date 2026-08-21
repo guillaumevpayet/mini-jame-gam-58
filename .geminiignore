@@ -1,0 +1,8 @@
+# Exclude environment and credential files
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+service-account.json
+secrets/
