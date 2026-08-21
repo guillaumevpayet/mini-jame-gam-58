@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="RhythmSong" format=3 uid="uid://cam32hm30e7h0"]
+
+[ext_resource type="Script" uid="uid://e13yv6wrw13f" path="res://addons/rhythm_generator/rhythm_song.gd" id="1_f0a88"]
+[ext_resource type="Script" uid="uid://ckholaxaj3dpf" path="res://addons/rhythm_generator/rhythm_timing_window.gd" id="2_eg5lw"]
+
+[sub_resource type="Resource" id="Resource_f0a88"]
+resource_local_to_scene = true
+script = ExtResource("2_eg5lw")
+timestamp = 6.231655
+high_window_start = 6.1816551208496096
+high_window_end = 6.281655120849609
+low_window_start = 6.13165512084961
+low_window_end = 6.331655120849609
+
+[sub_resource type="Resource" id="Resource_eg5lw"]
+resource_local_to_scene = true
+script = ExtResource("2_eg5lw")
+timestamp = 10.460589
+high_window_start = 10.14936466217041
+high_window_end = 10.771814155578614
+low_window_start = 10.09936466217041
+low_window_end = 10.821814155578613
+
+[sub_resource type="Resource" id="Resource_02m4l"]
+resource_local_to_scene = true
+script = ExtResource("2_eg5lw")
+timestamp = 12.508299350738525
+high_window_start = 12.20723361968994
+high_window_end = 12.80936508178711
+low_window_start = 12.157233619689942
+low_window_end = 12.859365081787109
+
+[sub_resource type="Resource" id="Resource_ha84k"]
+resource_local_to_scene = true
+script = ExtResource("2_eg5lw")
+timestamp = 14.476191
+high_window_start = 14.105465126037597
+high_window_end = 14.846916007995606
+low_window_start = 14.055465126037598
+low_window_end = 14.896916007995605
+
+[sub_resource type="Resource" id="Resource_41wyy"]
+resource_local_to_scene = true
+script = ExtResource("2_eg5lw")
+timestamp = 16.507936
+high_window_start = 16.143016052246093
+high_window_end = 16.872856903076173
+low_window_start = 16.093016052246092
+low_window_end = 16.922856903076173
+
+[sub_resource type="Resource" id="Resource_n5bh3"]
+resource_local_to_scene = true
+script = ExtResource("2_eg5lw")
+timestamp = 18.470022
+high_window_start = 18.168955993652343
+high_window_end = 18.77108840942383
+low_window_start = 18.118955993652342
+low_window_end = 18.82108840942383
+
+[sub_resource type="Resource" id="Resource_eguxh"]
+resource_local_to_scene = true
+script = ExtResource("2_eg5lw")
+timestamp = 20.455328941345215
+high_window_start = 20.07009048461914
+high_window_end = 20.84056739807129
+low_window_start = 20.02009048461914
+low_window_end = 20.89056739807129
+
+[resource]
+script = ExtResource("1_f0a88")
+timing_windows = Array[ExtResource("2_eg5lw")]([SubResource("Resource_f0a88"), SubResource("Resource_eg5lw"), SubResource("Resource_02m4l"), SubResource("Resource_ha84k"), SubResource("Resource_41wyy"), SubResource("Resource_n5bh3"), SubResource("Resource_eguxh")])

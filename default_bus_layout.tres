@@ -2,6 +2,8 @@
 
 [sub_resource type="AudioEffectSpectrumAnalyzer" id="AudioEffectSpectrumAnalyzer_j3pel"]
 resource_name = "SpectrumAnalyzer"
+buffer_length = 4.0
+fft_size = 4
 
 [resource]
 bus/1/name = &"MusicVisualiser"
