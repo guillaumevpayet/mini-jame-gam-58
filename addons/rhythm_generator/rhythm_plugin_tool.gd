@@ -14,8 +14,6 @@ class_name RhythmPluginTool
 @export_range(20.0, 50000.0) var freq_end: float = 20000.0
 @export_range(0.001, 1.0) var energy_threshold: float = 0.08
 @export_range(1, 10) var sample_amt: int = 3
-@export var strong_match_delta: float = 0.05
-@export var weak_match_delta: float = 0.1
 @export_tool_button("Generate Rhythm Resource", "Callable") var generation_action = _on_generate_pressed
 
 @export_category("Output")
@@ -131,8 +129,4 @@ func _add_window(start: float, end: float) -> void:
 	# Define window based on the start and end of the burst
 	var window = RhythmTimingWindow.new()
 	window.timestamp = (start + end) / 2.0
-	window.high_window_start = start - strong_match_delta
-	window.high_window_end = end + strong_match_delta
-	window.low_window_start = start - weak_match_delta
-	window.low_window_end = end + weak_match_delta
 	current_song.timing_windows.append(window)

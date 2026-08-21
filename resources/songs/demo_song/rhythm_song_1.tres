@@ -1,35 +1,42 @@
-[gd_resource type="Resource" script_class="RhythmSong" format=3 uid="uid://c2r540ibs2hdc"]
+[gd_resource type="Resource" script_class="RhythmSong" format=3 uid="uid://cam32hm30e7h0"]
 
 [ext_resource type="Script" uid="uid://e13yv6wrw13f" path="res://addons/rhythm_generator/rhythm_song.gd" id="1_f0a88"]
 [ext_resource type="Script" uid="uid://ckholaxaj3dpf" path="res://addons/rhythm_generator/rhythm_timing_window.gd" id="2_eg5lw"]
 
 [sub_resource type="Resource" id="Resource_f0a88"]
+resource_local_to_scene = true
 script = ExtResource("2_eg5lw")
-timestamp = 6.224399
+timestamp = 6.231655
 
 [sub_resource type="Resource" id="Resource_eg5lw"]
+resource_local_to_scene = true
 script = ExtResource("2_eg5lw")
-timestamp = 10.406893253326416
+timestamp = 10.460589
 
 [sub_resource type="Resource" id="Resource_02m4l"]
+resource_local_to_scene = true
 script = ExtResource("2_eg5lw")
-timestamp = 12.480725765228271
+timestamp = 12.508299350738524
 
 [sub_resource type="Resource" id="Resource_ha84k"]
+resource_local_to_scene = true
 script = ExtResource("2_eg5lw")
-timestamp = 14.513923168182373
+timestamp = 14.476191
 
 [sub_resource type="Resource" id="Resource_41wyy"]
+resource_local_to_scene = true
 script = ExtResource("2_eg5lw")
-timestamp = 16.4644
+timestamp = 16.507936
 
 [sub_resource type="Resource" id="Resource_n5bh3"]
+resource_local_to_scene = true
 script = ExtResource("2_eg5lw")
-timestamp = 18.427937
+timestamp = 18.470022
 
 [sub_resource type="Resource" id="Resource_eguxh"]
+resource_local_to_scene = true
 script = ExtResource("2_eg5lw")
-timestamp = 20.497414588928223
+timestamp = 20.455328941345215
 
 [resource]
 script = ExtResource("1_f0a88")
