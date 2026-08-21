@@ -1,36 +1,58 @@
-[gd_resource type="Resource" script_class="RhythmSong" format=3 uid="uid://c2r540ibs2hdc"]
+[gd_resource type="Resource" script_class="RhythmSong" format=3 uid="uid://cam32hm30e7h0"]
 
 [ext_resource type="Script" uid="uid://e13yv6wrw13f" path="res://addons/rhythm_generator/rhythm_song.gd" id="1_f0a88"]
 [ext_resource type="Script" uid="uid://ckholaxaj3dpf" path="res://addons/rhythm_generator/rhythm_timing_window.gd" id="2_eg5lw"]
 
 [sub_resource type="Resource" id="Resource_f0a88"]
 script = ExtResource("2_eg5lw")
-timestamp = 6.224399
+timestamp = 10.524445
+position = Vector2(479.71194, 183.3647)
 
 [sub_resource type="Resource" id="Resource_eg5lw"]
 script = ExtResource("2_eg5lw")
-timestamp = 10.406893253326416
+timestamp = 12.524263
+position = Vector2(546.27344, 493.18985)
 
 [sub_resource type="Resource" id="Resource_02m4l"]
 script = ExtResource("2_eg5lw")
-timestamp = 12.480725765228271
+timestamp = 14.524081
+position = Vector2(550.6956, 213.45483)
 
 [sub_resource type="Resource" id="Resource_ha84k"]
 script = ExtResource("2_eg5lw")
-timestamp = 14.513923168182373
+timestamp = 16.52970600128174
+position = Vector2(463.8658, 283.74597)
 
 [sub_resource type="Resource" id="Resource_41wyy"]
 script = ExtResource("2_eg5lw")
-timestamp = 16.4644
+timestamp = 18.52371883392334
+position = Vector2(452.8942, 230.06035)
 
 [sub_resource type="Resource" id="Resource_n5bh3"]
 script = ExtResource("2_eg5lw")
-timestamp = 18.427937
+timestamp = 20.52934169769287
+position = Vector2(567.0857, 193.1281)
 
 [sub_resource type="Resource" id="Resource_eguxh"]
 script = ExtResource("2_eg5lw")
-timestamp = 20.497414588928223
+timestamp = 22.92970561981201
+position = Vector2(531.82697, 450.4521)
+
+[sub_resource type="Resource" id="Resource_awtjf"]
+script = ExtResource("2_eg5lw")
+timestamp = 24.423038
+position = Vector2(661.9487, 380.82846)
+
+[sub_resource type="Resource" id="Resource_iv68e"]
+script = ExtResource("2_eg5lw")
+timestamp = 25.47229
+position = Vector2(590.7648, 140.54585)
+
+[sub_resource type="Resource" id="Resource_xo0sf"]
+script = ExtResource("2_eg5lw")
+timestamp = 26.837914
+position = Vector2(449.1969, 272.40253)
 
 [resource]
 script = ExtResource("1_f0a88")
-timing_windows = Array[ExtResource("2_eg5lw")]([SubResource("Resource_f0a88"), SubResource("Resource_eg5lw"), SubResource("Resource_02m4l"), SubResource("Resource_ha84k"), SubResource("Resource_41wyy"), SubResource("Resource_n5bh3"), SubResource("Resource_eguxh")])
+timing_windows = Array[ExtResource("2_eg5lw")]([SubResource("Resource_f0a88"), SubResource("Resource_eg5lw"), SubResource("Resource_02m4l"), SubResource("Resource_ha84k"), SubResource("Resource_41wyy"), SubResource("Resource_n5bh3"), SubResource("Resource_eguxh"), SubResource("Resource_awtjf"), SubResource("Resource_iv68e"), SubResource("Resource_xo0sf")])

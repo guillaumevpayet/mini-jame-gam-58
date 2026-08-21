@@ -14,9 +14,8 @@ script = ExtResource("1_g17q7")
 ogg_stream = ExtResource("2_ktm6w")
 audio_player = NodePath("AudioStreamPlayer")
 freq_end = 250.0
-energy_threshold = 0.05
-sample_amt = 2
 output_directory = "res://resources/songs/demo_song"
+MaxRadius = 800.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=466747240]
 stream = ExtResource("2_ktm6w")

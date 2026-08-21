@@ -18,6 +18,19 @@ class_name RhythmPluginTool
 
 @export_category("Output")
 @export_dir var output_directory: String = "res://resources/songs"
+@export_category("Hit Marker Positioning")
+@export var MinRadius: float = 100.0:
+	set(value):
+		if value > MaxRadius:
+			printerr("Error: MinRadius cannot be greater than MaxRadius")
+			return
+		MinRadius = value
+@export var MaxRadius: float = 200.0:
+	set(value):
+		if value < MinRadius:
+			printerr("Error: MaxRadius cannot be less than MinRadius")
+			return
+		MaxRadius = value
 
 var spectrum_instance: AudioEffectSpectrumAnalyzerInstance
 
@@ -125,8 +138,40 @@ func _finalize_analysis() -> void:
 		print("RhythmSong saved to " + full_path)
 	current_song = null
 
+func calculate_window_position(window: RhythmTimingWindow):
+	var viewport_width = ProjectSettings.get_setting("display/window/size/viewport_width")
+	var viewport_height = ProjectSettings.get_setting("display/window/size/viewport_height")
+	var screen_size = Vector2(viewport_width, viewport_height)
+	# 50px boundary
+	var min_x = 50
+	var max_x = screen_size.x - 50
+	var min_y = 50
+	var max_y = screen_size.y - 50
+	
+	# Randomization factoring MinRadius and MaxRadius
+	var distance = randf_range(MinRadius, MaxRadius)
+	var angle = randf_range(0, 2 * PI)
+	
+	var new_position = Vector2(
+		(screen_size.x / 2) + cos(angle) * distance,
+		(screen_size.y / 2) + sin(angle) * distance
+	)
+	
+	# Rejection sampling for boundary check
+	while new_position.x < min_x or new_position.x > max_x or \
+		  new_position.y < min_y or new_position.y > max_y:
+		angle = randf_range(0, 2 * PI)
+		distance = randf_range(MinRadius, MaxRadius)
+		new_position = Vector2(
+			(screen_size.x / 2) + cos(angle) * distance,
+			(screen_size.y / 2) + sin(angle) * distance
+		)
+		
+	window.position = new_position
+
 func _add_window(start: float, end: float) -> void:
 	# Define window based on the start and end of the burst
 	var window = RhythmTimingWindow.new()
 	window.timestamp = (start + end) / 2.0
+	calculate_window_position(window)
 	current_song.timing_windows.append(window)
