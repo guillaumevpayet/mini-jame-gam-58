@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://1kfaf0n0ljhm"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="uid://dygmkk7p0f731"
 
 [physics]
 
