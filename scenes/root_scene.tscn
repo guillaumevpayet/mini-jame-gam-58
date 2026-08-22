@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cwdsbytvi8rys"]
+
+[ext_resource type="PackedScene" uid="uid://ge7ns64lrjxs" path="res://scenes/main_game_scene.tscn" id="1_kc8py"]
+
+[node name="Main" type="Node2D" unique_id=1053608468]
+
+[node name="BeatMarkerMaker" parent="." unique_id=1377299564 instance=ExtResource("1_kc8py")]

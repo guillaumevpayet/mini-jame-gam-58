@@ -3,9 +3,11 @@ extends Node
 
 @export var song: RhythmSong
 @export var beat_marker: PackedScene
+@export var gameOverScreenScene: PackedScene
 
 ## Time to spawn the beat marker before the beat, in seconds.
 @export var time_before_beat: float
+@export var miss_tolerance: int = 3
 
 
 signal score_changed(score: int)
@@ -16,15 +18,19 @@ signal score_changed(score: int)
 
 var _next_timing_window_index: int
 var _score: int
+var _miss_streak: int = 0
 
 
-# func _ready() -> void:
-# 	_audio_stream_player.stream = song.audio_stream
+func _ready() -> void:
+	_update_score_display()
 
 func _process(_delta: float) -> void:
 	var playback_position: float = _audio_stream_player.get_playback_position()
 	var half_delta: float = 0.5 * _delta
 
+	if _next_timing_window_index >= song.timing_windows.size():
+		return
+	
 	var timing_window: RhythmTimingWindow = song.timing_windows[_next_timing_window_index]
 	
 	if playback_position > timing_window.timestamp - time_before_beat:
@@ -40,6 +46,39 @@ func _create_beat_marker(marker_position: Vector2):
 
 
 func _on_BeatMarker_score_obtained(score: int):
-	_score += score
-	$Label.text = "Score: " + str(_score) + ""
+	match score:
+		0:
+			_miss_streak += 1
+		1:
+			_score += song.score_increase_for_low_hit
+			_miss_streak = 0
+		2:
+			_score += song.score_increase_for_high_hit
+			_miss_streak = 0
+	
+	_update_score_display()
 	score_changed.emit(_score)
+
+	if _miss_streak >= miss_tolerance:
+		_end_game(false)
+
+func _update_score_display() -> void:
+	$Label.text = "Score: " + str(_score) + " / " + str(song.minimum_target_score)
+
+
+func _on_audio_stream_player_2d_finished() -> void:
+	_end_game(_score >= song.minimum_target_score)
+
+func _end_game(win: bool):
+	var parent: Node = get_parent()
+	parent.remove_child(self)
+
+	var gameOverScreen: GameOverScreen = gameOverScreenScene.instantiate()
+	parent.add_child(gameOverScreen)
+
+	if win:
+		gameOverScreen.set_label_text("You win!")
+	else:
+		gameOverScreen.set_label_text("You lose")
+
+	queue_free()

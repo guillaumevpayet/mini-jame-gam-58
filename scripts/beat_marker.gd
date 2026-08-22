@@ -4,10 +4,11 @@ class_name BeatMarker
 
 
 @export var tolerances: Array[float]
-@export var indicator_ring_max_scale: float = 5
+@export var indicator_ring_max_scale: float = 3
+@export var max_radius: float = 30
 
 
-@onready var _sprite: Sprite2D = $Sprite2D
+@onready var _target_ring: Sprite2D = $TargetRing
 @onready var _indicator_ring: Sprite2D = $IndicatorRing
 
 
@@ -25,32 +26,40 @@ func init(beat_position: Vector2, time_to_beat: float):
 
 
 func _ready() -> void:
-	_sprite.modulate = Color.TRANSPARENT
+	_target_ring.modulate = Color.TRANSPARENT
 	_indicator_ring.scale = indicator_ring_max_scale * Vector2.ONE
 
 func _process(_delta: float) -> void:
 	_remaining_time_to_beat -= _delta
 
 	if _remaining_time_to_beat <= -_original_time_to_beat:
+		score_obtained.emit(0)
 		queue_free()
 		return
 	
 	var opacity: float = 1 - (abs(_remaining_time_to_beat) / _original_time_to_beat)
-	_sprite.modulate = Color(1, 1, 1, opacity)
+	_target_ring.modulate = Color(1, 1, 1, opacity)
 	
-	if _remaining_time_to_beat >= 0:
-		_indicator_ring.scale = indicator_ring_max_scale * (1 - opacity) * Vector2.ONE
-	elif _indicator_ring.is_visible():
-		_indicator_ring.hide()
+	if _remaining_time_to_beat > 0:
+		_indicator_ring.scale = (indicator_ring_max_scale - (indicator_ring_max_scale - 1) * opacity) * Vector2.ONE
+	else:
+		_indicator_ring.scale = opacity * Vector2.ONE;
 
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed:
+	if event is not InputEventMouseButton or not event.pressed:
+		return
+	
+	var radius: float = event.position.distance_to(position)
+	
+	if radius > max_radius:
+		score_obtained.emit(0)
+	else:
 		var tolerance_count: int = tolerances.size()
 		
 		for score in range(tolerance_count):
 			if abs(_remaining_time_to_beat) <= tolerances[score]:
-				score_obtained.emit(tolerance_count - score)
+				score_obtained.emit(tolerance_count - score - 1)
 				break
-		
-		queue_free()
+	
+	queue_free()
