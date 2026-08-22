@@ -13,17 +13,33 @@ position = Vector2(574.7, 440.75)
 scale = Vector2(5.14375, 5.14375)
 texture = ExtResource("1_tbgi4")
 
-[node name="BeatMarkerMaker" type="Node" parent="." unique_id=690469909]
+[node name="BeatMarkerMaker" type="Node" parent="." unique_id=690469909 node_paths=PackedStringArray("gameOverLabel")]
 script = ExtResource("3_jyhfs")
 song = ExtResource("3_sugp2")
 beat_marker = ExtResource("2_0wfyh")
+gameOverLabel = NodePath("../GameOverLabel")
 time_before_beat = 1.0
 
 [node name="Label" type="Label" parent="BeatMarkerMaker" unique_id=1534036321]
-offset_right = 61.0
-offset_bottom = 23.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -121.0
+offset_bottom = 45.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
 text = "Score: 0"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="BeatMarkerMaker" unique_id=754870742]
 stream = ExtResource("4_jyhfs")
 autoplay = true
+
+[node name="GameOverLabel" type="Label" parent="." unique_id=1852502368]
+visible = false
+offset_right = 587.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 128
+text = "You Lose!"
+horizontal_alignment = 1
+
+[connection signal="finished" from="BeatMarkerMaker/AudioStreamPlayer2D" to="BeatMarkerMaker" method="_on_audio_stream_player_2d_finished"]

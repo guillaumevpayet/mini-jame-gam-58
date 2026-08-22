@@ -4,7 +4,7 @@ class_name BeatMarker
 
 
 @export var tolerances: Array[float]
-@export var indicator_ring_max_scale: float = 4
+@export var indicator_ring_max_scale: float = 3
 @export var max_radius: float = 30
 
 
@@ -58,7 +58,7 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 		
 		for score in range(tolerance_count):
 			if abs(_remaining_time_to_beat) <= tolerances[score]:
-				score_obtained.emit(tolerance_count - score)
+				score_obtained.emit(tolerance_count - score - 1)
 				break
 	
 	queue_free()
