@@ -4,9 +4,11 @@ class_name BeatMarker
 
 
 @export var tolerances: Array[float]
+@export var indicator_ring_max_scale: float = 5
 
 
 @onready var _sprite: Sprite2D = $Sprite2D
+@onready var _indicator_ring: Sprite2D = $IndicatorRing
 
 
 var _original_time_to_beat: float
@@ -24,6 +26,7 @@ func init(beat_position: Vector2, time_to_beat: float):
 
 func _ready() -> void:
 	_sprite.modulate = Color.TRANSPARENT
+	_indicator_ring.scale = indicator_ring_max_scale * Vector2.ONE
 
 func _process(_delta: float) -> void:
 	_remaining_time_to_beat -= _delta
@@ -34,6 +37,11 @@ func _process(_delta: float) -> void:
 	
 	var opacity: float = 1 - (abs(_remaining_time_to_beat) / _original_time_to_beat)
 	_sprite.modulate = Color(1, 1, 1, opacity)
+	
+	if _remaining_time_to_beat >= 0:
+		_indicator_ring.scale = indicator_ring_max_scale * (1 - opacity) * Vector2.ONE
+	elif _indicator_ring.is_visible():
+		_indicator_ring.hide()
 
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
