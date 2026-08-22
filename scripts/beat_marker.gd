@@ -33,6 +33,7 @@ func _process(_delta: float) -> void:
 	_remaining_time_to_beat -= _delta
 
 	if _remaining_time_to_beat <= -_original_time_to_beat:
+		score_obtained.emit(0)
 		queue_free()
 		return
 	
