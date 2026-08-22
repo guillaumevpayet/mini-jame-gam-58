@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://nskf2kc52kf"]
+
+[ext_resource type="Script" uid="uid://vfm1x0h7bs6q" path="res://scripts/beat_marker.gd" id="1_pom5a"]
+[ext_resource type="Texture2D" uid="uid://dep25fixje8jn" path="res://icon.svg" id="2_t880s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6mop"]
+
+[node name="BeatMarker" type="Area2D" unique_id=372079869]
+script = ExtResource("1_pom5a")
+tolerances = Array[float]([0.5, 1.0])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1294068821]
+scale = Vector2(6.41, 6.41)
+shape = SubResource("RectangleShape2D_c6mop")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1212159609]
+texture = ExtResource("2_t880s")
