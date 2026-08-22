@@ -3,7 +3,7 @@ extends Node
 
 @export var song: RhythmSong
 @export var beat_marker: PackedScene
-@export var gameOverLabel: Label
+@export var gameOverScreenScene: PackedScene
 
 ## Time to spawn the beat marker before the beat, in seconds.
 @export var time_before_beat: float
@@ -19,8 +19,8 @@ var _next_timing_window_index: int
 var _score: int
 
 
-# func _ready() -> void:
-# 	_audio_stream_player.stream = song.audio_stream
+func _ready() -> void:
+	_update_score_display()
 
 func _process(_delta: float) -> void:
 	var playback_position: float = _audio_stream_player.get_playback_position()
@@ -52,14 +52,23 @@ func _on_BeatMarker_score_obtained(score: int):
 		2:
 			_score += song.score_increase_for_high_hit
 	
-	$Label.text = "Score: " + str(_score) + " / " + str(song.minimum_target_score)
+	_update_score_display()
 	score_changed.emit(_score)
+
+func _update_score_display() -> void:
+	$Label.text = "Score: " + str(_score) + " / " + str(song.minimum_target_score)
 
 
 func _on_audio_stream_player_2d_finished() -> void:
+	var parent: Node = get_parent()
+	parent.remove_child(self)
+	
+	var gameOverScreen: GameOverScreen = gameOverScreenScene.instantiate()
+	parent.add_child(gameOverScreen)
+	
 	if _score < song.minimum_target_score:
-		gameOverLabel.text = "You lose"
+		gameOverScreen.set_label_text("You lose")
 	else:
-		gameOverLabel.text = "You win!"
-		
-	gameOverLabel.visible = true
+		gameOverScreen.set_label_text("You win!")
+	
+	queue_free()
