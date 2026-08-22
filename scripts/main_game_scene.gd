@@ -8,9 +8,11 @@ extends Node
 ## Time to spawn the beat marker before the beat, in seconds.
 @export var time_before_beat: float
 @export var miss_tolerance: int = 3
+@export var max_combo: int = 12
 
 
-signal score_changed(score: int)
+signal score_changed(score: int, minimum_target_score: int)
+signal combo_changed(combo: int)
 
 
 @onready var _audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
@@ -19,10 +21,12 @@ signal score_changed(score: int)
 var _next_timing_window_index: int
 var _score: int
 var _miss_streak: int = 0
+var _combo: int = 0
 
 
 func _ready() -> void:
-	_update_score_display()
+	score_changed.emit(_score, song.minimum_target_score)
+	combo_changed.emit(_combo)
 
 func _process(_delta: float) -> void:
 	var playback_position: float = _audio_stream_player.get_playback_position()
@@ -49,21 +53,24 @@ func _on_BeatMarker_score_obtained(score: int):
 	match score:
 		0:
 			_miss_streak += 1
+			_combo = 0
 		1:
 			_score += song.score_increase_for_low_hit
 			_miss_streak = 0
+			_combo += 1
 		2:
 			_score += song.score_increase_for_high_hit
 			_miss_streak = 0
+			_combo += 1
+		
+	if _combo > max_combo:
+		_combo = max_combo
 	
-	_update_score_display()
-	score_changed.emit(_score)
+	score_changed.emit(_score, song.minimum_target_score)
+	combo_changed.emit(_combo)
 
 	if _miss_streak >= miss_tolerance:
 		_end_game(false)
-
-func _update_score_display() -> void:
-	$Label.text = "Score: " + str(_score) + " / " + str(song.minimum_target_score)
 
 
 func _on_audio_stream_player_2d_finished() -> void:
