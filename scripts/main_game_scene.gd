@@ -15,7 +15,7 @@ signal score_changed(score: int, minimum_target_score: int)
 signal combo_changed(combo: int)
 
 
-@onready var _audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var _audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 
 var _next_timing_window_index: int
@@ -32,7 +32,6 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	var playback_position: float = _audio_stream_player.get_playback_position()
-	var half_delta: float = 0.5 * _delta
 
 	if _next_timing_window_index >= _song_timings.size():
 		return

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bh6sekirxqtfo"]
+
+[ext_resource type="Script" uid="uid://c84fquplioerr" path="res://scripts/sound_effect.gd" id="1_jnjhk"]
+[ext_resource type="AudioStream" uid="uid://d1dagl3ku05qu" path="res://assets/sfx/IMPACT_Metal_Cling_Clean_mono.wav" id="2_a4650"]
+[ext_resource type="AudioStream" uid="uid://cldyx2qrddexi" path="res://assets/sfx/IMPACT_Metal_Cling_Deep_mono.wav" id="3_g4wap"]
+[ext_resource type="AudioStream" uid="uid://c7yj166ovae" path="res://assets/sfx/IMPACT_Metal_Hit_Large_Metal_02_mono.wav" id="4_nocgn"]
+[ext_resource type="AudioStream" uid="uid://q44mxermb33t" path="res://assets/sfx/IMPACT_Metal_Large_Pipe_Hits_Pipe_mono.wav" id="5_g4wap"]
+[ext_resource type="AudioStream" uid="uid://cmry1badqrlr" path="res://assets/sfx/WHOOSH_Noisy_02_mono.wav" id="6_f0t81"]
+[ext_resource type="AudioStream" uid="uid://d15cl2ecuyrlj" path="res://assets/sfx/WHOOSH_Noisy_03_mono.wav" id="7_igsfb"]
+
+[node name="SoundEffect" type="AudioStreamPlayer2D" unique_id=1268917297]
+volume_db = -16.0
+autoplay = true
+script = ExtResource("1_jnjhk")
+perfect_hit_sounds = Array[Resource]([ExtResource("2_a4650"), ExtResource("3_g4wap")])
+ok_hit_sounds = Array[Resource]([ExtResource("4_nocgn"), ExtResource("5_g4wap")])
+miss_sounds = Array[Resource]([ExtResource("6_f0t81"), ExtResource("7_igsfb")])
+
+[connection signal="finished" from="." to="." method="_on_finished"]

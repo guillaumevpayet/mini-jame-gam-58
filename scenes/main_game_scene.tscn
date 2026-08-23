@@ -65,5 +65,5 @@ script = ExtResource("9_ef5fi")
 
 [connection signal="combo_changed" from="." to="Furnace" method="_on_main_game_scene_combo_changed"]
 [connection signal="score_changed" from="." to="MarginContainer/ScoreLabel" method="_on_main_game_scene_score_changed"]
-[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_2d_finished"]
 [connection signal="frame_changed" from="Furnace" to="Furnace" method="_on_frame_changed"]

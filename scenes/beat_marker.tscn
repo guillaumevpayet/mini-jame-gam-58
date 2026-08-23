@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://nskf2kc52kf"]
 
 [ext_resource type="Script" uid="uid://vfm1x0h7bs6q" path="res://scripts/beat_marker.gd" id="1_pom5a"]
+[ext_resource type="PackedScene" uid="uid://bh6sekirxqtfo" path="res://scenes/sound_effect.tscn" id="2_t880s"]
 [ext_resource type="Texture2D" uid="uid://7q0tuok25hvn" path="res://assets/Indicator Ring.png" id="3_t880s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pom5a"]
@@ -8,6 +9,7 @@
 [node name="BeatMarker" type="Area2D" unique_id=372079869]
 script = ExtResource("1_pom5a")
 tolerances = Array[float]([0.2, 0.4, 0.6])
+sound_effect_scene = ExtResource("2_t880s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1294068821]
 scale = Vector2(6.41, 6.41)
