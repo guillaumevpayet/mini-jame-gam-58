@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ge7ns64lrjxs"]
 
 [ext_resource type="Script" uid="uid://7yhetykehgr5" path="res://scripts/main_game_scene.gd" id="1_ilxj7"]
-[ext_resource type="Resource" uid="uid://nl8gjy727cpf" path="res://resources/songs/song_1/rhythm_song.tres" id="2_i4o3e"]
+[ext_resource type="Resource" uid="uid://cr0wv66mq558a" path="res://resources/songs/song_1/rhythm_song.tres" id="2_i4o3e"]
 [ext_resource type="PackedScene" uid="uid://nskf2kc52kf" path="res://scenes/beat_marker.tscn" id="3_4a4v8"]
 [ext_resource type="Texture2D" uid="uid://g634qog2nadv" path="res://assets/Anvil surface.png" id="5_4a4v8"]
 [ext_resource type="Texture2D" uid="uid://ck0dnelt8qjhm" path="res://assets/shortsword sprite.png" id="5_i4o3e"]
@@ -15,7 +15,7 @@
 script = ExtResource("1_ilxj7")
 song = ExtResource("2_i4o3e")
 beat_marker = ExtResource("3_4a4v8")
-time_before_beat = 0.25
+time_before_beat = 0.15
 beat_lifetime = 1.0
 
 [node name="AnvilSurface" type="Sprite2D" parent="." unique_id=1455012858]

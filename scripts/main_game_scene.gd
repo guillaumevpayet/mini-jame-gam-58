@@ -13,7 +13,7 @@ class_name MainGameScene
 
 
 signal score_changed(score: int, minimum_target_score: int)
-signal combo_changed(combo: int)
+signal combo_changed()
 signal game_over(perfect_count: int, ok_count: int, miss_count: int, win: bool)
 
 
@@ -23,7 +23,6 @@ signal game_over(perfect_count: int, ok_count: int, miss_count: int, win: bool)
 var _next_timing_window_index: int
 var _score: int
 var _miss_streak: int = 0
-var _combo: int = 0
 var _song_timings: Array[RhythmTimingWindow]
 var _perfect_count: int = 0
 var _ok_count: int = 0
@@ -32,7 +31,7 @@ var _active_beat_markers: Array[BeatMarker]
 
 func _ready() -> void:
 	score_changed.emit(_score, song.minimum_target_score)
-	combo_changed.emit(_combo)
+	combo_changed.emit()
 	_song_timings = song.timing_windows
 	_song_timings.sort_custom(func(a: RhythmTimingWindow, b: RhythmTimingWindow): return a.timestamp < b.timestamp)
 	get_viewport().physics_object_picking_sort = true      # order by z_index / tree order
@@ -87,23 +86,23 @@ func _on_BeatMarker_score_obtained(score: int):
 		0:
 			_miss_count += 1
 			_miss_streak += 1
-			_combo = 0
+			Globals.current_combo = 0
 		1:
 			_ok_count += 1
-			_score += song.score_increase_for_low_hit * (1 + _combo)
+			_score += song.score_increase_for_low_hit * (1 + Globals.current_combo)
 			_miss_streak = 0
-			_combo += 1
+			Globals.current_combo += 1
 		2:
 			_perfect_count += 1
-			_score += song.score_increase_for_high_hit * (1 + _combo)
+			_score += song.score_increase_for_high_hit * (1 + Globals.current_combo)
 			_miss_streak = 0
-			_combo += 1
+			Globals.current_combo += 1
 		
-	if _combo > max_combo:
-		_combo = max_combo
+	if Globals.current_combo > max_combo:
+		Globals.current_combo = max_combo
 	
 	score_changed.emit(_score, song.minimum_target_score)
-	combo_changed.emit(_combo)
+	combo_changed.emit()
 
 	if _miss_streak >= miss_tolerance:
 		game_over.emit(_perfect_count, _ok_count, _miss_count, false)

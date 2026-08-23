@@ -22,6 +22,10 @@ config/icon="uid://6qr58whumxfh"
 
 buses/default_bus_layout="uid://1kfaf0n0ljhm"
 
+[autoload]
+
+Globals="*uid://bip2ukf1n68dq"
+
 [display]
 
 window/stretch/mode="canvas_items"
