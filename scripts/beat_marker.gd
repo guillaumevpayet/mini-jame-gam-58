@@ -46,8 +46,8 @@ func _process(_delta: float) -> void:
 		_indicator_ring.scale = opacity * Vector2.ONE;
 
 
-func determine_click_score(position: Vector2) -> void:
-	var radius: float = position.distance_to(position)
+func determine_click_score(event_position: Vector2) -> void:
+	var radius: float = event_position.distance_to(global_position)
 	var score: int = 0
 	
 	if radius <= max_radius:
@@ -69,9 +69,9 @@ func _emit_score_and_disappear(score: int):
 	match score:
 		0:
 			sound_effect.play_miss()
-		1:
-			sound_effect.play_ok_hit()
 		_:
+			sound_effect.play_ok_hit()
+		3:
 			sound_effect.play_perfect_hit()
 			
 	despawn.emit(self)

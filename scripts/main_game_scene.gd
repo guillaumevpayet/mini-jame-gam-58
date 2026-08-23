@@ -113,12 +113,12 @@ func _on_BeatMarker_score_obtained(score: int):
 			_miss_count += 1
 			_miss_streak += 1
 			Globals.current_combo = 0
-		1:
+		_: # 1 & 2 are ok
 			_ok_count += 1
 			_score += song.score_increase_for_low_hit * (1 + Globals.current_combo)
 			_miss_streak = 0
 			Globals.current_combo += 1
-		_: # Handle 2, 3, or any higher score as perfect
+		3: 
 			_perfect_count += 1
 			_score += song.score_increase_for_high_hit * (1 + Globals.current_combo)
 			_miss_streak = 0

@@ -33,7 +33,7 @@ func _on_main_game_scene_combo_changed() -> void:
 	else:
 		_audio_stream_player.volume_db = 2 * (Globals.current_combo - 24)
 		
-		if Globals.current_combo == 0:
+		if !_audio_stream_player.playing:
 			_audio_stream_player.play()
 		
 		if Globals.current_combo > 6:
