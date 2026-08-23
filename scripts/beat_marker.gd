@@ -69,9 +69,9 @@ func _emit_score_and_disappear(score: int):
 	match score:
 		0:
 			sound_effect.play_miss()
-		_:
-			sound_effect.play_ok_hit()
 		3:
 			sound_effect.play_perfect_hit()
+		_:
+			sound_effect.play_ok_hit()
 			
 	despawn.emit(self)
