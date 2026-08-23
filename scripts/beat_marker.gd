@@ -15,8 +15,6 @@ class_name BeatMarker
 
 var _original_time_to_beat: float
 var _remaining_time_to_beat: float
-var _has_mouse_active: bool = false
-
 
 signal score_obtained(score: int)
 signal despawn(instance: BeatMarker)
@@ -48,8 +46,8 @@ func _process(_delta: float) -> void:
 		_indicator_ring.scale = opacity * Vector2.ONE;
 
 
-func determine_click_score(event: InputEvent) -> void:
-	var radius: float = event.position.distance_to(position)
+func determine_click_score(position: Vector2) -> void:
+	var radius: float = position.distance_to(position)
 	var score: int = 0
 	
 	if radius <= max_radius:
@@ -59,7 +57,7 @@ func determine_click_score(event: InputEvent) -> void:
 			if abs(_remaining_time_to_beat) <= tolerances[index]:
 				score = tolerance_count - index
 				break
-
+	
 	_emit_score_and_disappear(score)
 
 func _emit_score_and_disappear(score: int):
@@ -73,14 +71,7 @@ func _emit_score_and_disappear(score: int):
 			sound_effect.play_miss()
 		1:
 			sound_effect.play_ok_hit()
-		2:
+		_:
 			sound_effect.play_perfect_hit()
 			
 	despawn.emit(self)
-
-
-func _on_mouse_entered() -> void:
-	_has_mouse_active = true
-
-func _on_mouse_exited() -> void:
-	_has_mouse_active = false

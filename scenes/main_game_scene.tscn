@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ge7ns64lrjxs"]
 
 [ext_resource type="Script" uid="uid://7yhetykehgr5" path="res://scripts/main_game_scene.gd" id="1_ilxj7"]
-[ext_resource type="Resource" uid="uid://cr0wv66mq558a" path="res://resources/songs/song_1/rhythm_song.tres" id="2_i4o3e"]
+[ext_resource type="Resource" uid="uid://bbapx2q1gpjtj" path="res://resources/songs/song_1/rhythm_song.tres" id="2_i4o3e"]
 [ext_resource type="PackedScene" uid="uid://nskf2kc52kf" path="res://scenes/beat_marker.tscn" id="3_4a4v8"]
 [ext_resource type="Texture2D" uid="uid://g634qog2nadv" path="res://assets/Anvil surface.png" id="5_4a4v8"]
 [ext_resource type="Texture2D" uid="uid://ck0dnelt8qjhm" path="res://assets/shortsword sprite.png" id="5_i4o3e"]
@@ -15,7 +15,7 @@
 script = ExtResource("1_ilxj7")
 song = ExtResource("2_i4o3e")
 beat_marker = ExtResource("3_4a4v8")
-time_before_beat = 0.15
+time_before_beat = 0.06
 beat_lifetime = 1.0
 
 [node name="AnvilSurface" type="Sprite2D" parent="." unique_id=1455012858]
@@ -31,11 +31,11 @@ texture = ExtResource("5_i4o3e")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1679130757]
 stream = ExtResource("7_cofsh")
-autoplay = true
+bus = &"Music"
 
 [node name="PercussionsAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=789726541]
 stream = ExtResource("8_u2xxy")
-autoplay = true
+bus = &"Music"
 
 [node name="Furnace" parent="." unique_id=248506035 instance=ExtResource("8_i4o3e")]
 position = Vector2(100, 292)
@@ -64,6 +64,47 @@ script = ExtResource("10_i4o3e")
 
 [node name="BeatMarkersContainer" type="Node" parent="." unique_id=867851737]
 
+[node name="CoundownDisplay" type="Control" parent="." unique_id=1066096946]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="CoundownDisplay" unique_id=1619529737]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.019607844, 0.019607844, 0.019607844, 0.5568628)
+
+[node name="Label" type="Label" parent="CoundownDisplay" unique_id=1708977683]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountdownInterval" type="Timer" parent="." unique_id=1968433536]
+wait_time = 0.75
+autostart = true
+
+[node name="AllowPlaybackSync" type="Timer" parent="." unique_id=2018134562]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="combo_changed" from="." to="Furnace" method="_on_main_game_scene_combo_changed"]
 [connection signal="score_changed" from="." to="MarginContainer/ScoreLabel" method="_on_main_game_scene_score_changed"]
 [connection signal="score_changed" from="." to="ShakeableCamera2D" method="_on_main_game_scene_score_changed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="timeout" from="CountdownInterval" to="." method="_on_countdown_interval_timeout"]
+[connection signal="timeout" from="AllowPlaybackSync" to="." method="_on_allow_playback_sync_timeout"]
