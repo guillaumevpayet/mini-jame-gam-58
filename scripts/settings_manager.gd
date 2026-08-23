@@ -11,7 +11,7 @@ func connect_signals(settings_menu: SettingsMenu) -> void:
 	settings_menu.brightness_changed.connect(_on_brightness_changed)
 	settings_menu.music_volume_changed.connect(_on_music_volume_changed)
 	settings_menu.sfx_volume_changed.connect(_on_sfx_volume_changed)
-	settings_menu.set_values(1 - _dimmer.modulate.a, 0.5, 0.5)
+	settings_menu.set_values(_dimmer.modulate.a, 0.5, 0.5)
 
 
 func _on_brightness_changed(brightness: float) -> void:
