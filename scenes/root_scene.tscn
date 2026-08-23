@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bf37i1c68tifw" path="res://scenes/game_over_screen.tscn" id="4_docf2"]
 [ext_resource type="Script" uid="uid://dfw3kqaubnve8" path="res://scripts/settings_manager.gd" id="6_72xyp"]
 [ext_resource type="AudioBusLayout" uid="uid://1kfaf0n0ljhm" path="res://default_bus_layout.tres" id="7_72xyp"]
+[ext_resource type="AudioStream" uid="uid://bt2h3dltsvceu" path="res://resources/songs/bs_menu.ogg" id="8_ed5s8"]
+[ext_resource type="AudioStream" uid="uid://cldyx2qrddexi" path="res://assets/sfx/IMPACT_Metal_Cling_Deep_mono.wav" id="9_epl2j"]
 
 [node name="RootScene" type="Node" unique_id=302167452]
 script = ExtResource("1_cgud6")
@@ -31,6 +33,17 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2112814288]
+stream = ExtResource("8_ed5s8")
+volume_db = -5.0
+autoplay = true
+bus = &"Music"
+
+[node name="SfxPlayer" type="AudioStreamPlayer" parent="." unique_id=2094206779]
+stream = ExtResource("9_epl2j")
+volume_db = -24.0
+bus = &"SFX"
 
 [connection signal="open_settings_menu" from="GameScreen/TitleScreen" to="." method="_on_title_screen_open_settings_menu"]
 [connection signal="start_game" from="GameScreen/TitleScreen" to="." method="_on_title_screen_start_game"]

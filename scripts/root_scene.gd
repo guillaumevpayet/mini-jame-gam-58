@@ -9,9 +9,11 @@ extends Node
 @onready var _settings_manager: SettingsManager = $SettingsManager
 @onready var _game_screen: Node = $GameScreen
 @onready var _active_scene: Node = $GameScreen/TitleScreen
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _on_title_screen_start_game() -> void:
+	audio_stream_player.stop()
 	var main_game: MainGameScene = main_game_scene.instantiate()
 	main_game.game_over.connect(_on_main_game_screen_game_over)
 	_replace_scene(main_game)
@@ -29,12 +31,15 @@ func _on_settings_menu_close_menu() -> void:
 	_replace_scene(title_screen)
 
 func _on_main_game_screen_game_over(perfect_count: int, ok_count: int, miss_count: int, win: bool) -> void:
+	audio_stream_player.play()
 	var game_over_screen: GameOverScreen = game_over_screen_scene.instantiate()
 	game_over_screen.init(perfect_count, ok_count, miss_count, win)
 	game_over_screen.restart_game.connect(_on_game_over_screen_restart_game)
 	_replace_scene(game_over_screen)
 
 func _on_game_over_screen_restart_game() -> void:
+	Globals.current_combo = 0
+	audio_stream_player.stop()
 	var main_game: MainGameScene = main_game_scene.instantiate()
 	main_game.game_over.connect(_on_main_game_screen_game_over)
 	_replace_scene(main_game)
