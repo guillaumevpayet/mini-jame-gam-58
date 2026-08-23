@@ -1,6 +1,9 @@
 extends AnimatedSprite2D
 
 
+@onready var _audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
+
 var _combo: int = 0
 
 
@@ -14,4 +17,12 @@ func _on_frame_changed() -> void:
 
 
 func _on_main_game_scene_combo_changed(combo: int) -> void:
+	if combo == 0:
+		_audio_stream_player.stop()
+	else:
+		_audio_stream_player.volume_db = 2 * (combo - 12)
+		
+		if _combo == 0:
+			_audio_stream_player.play()
+	
 	_combo = combo

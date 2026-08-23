@@ -9,7 +9,6 @@
 [ext_resource type="SpriteFrames" uid="uid://3s8i7vi63mrx" path="res://resources/combo_frames.tres" id="8_ef5fi"]
 [ext_resource type="AudioStream" uid="uid://cbwqcwlk2hsw0" path="res://resources/songs/song_1/bs_1_perc_only.ogg" id="8_u2xxy"]
 [ext_resource type="Script" uid="uid://don0g2v2togm4" path="res://scripts/score_label.gd" id="9_ef5fi"]
-[ext_resource type="Script" uid="uid://cs83qpg1tds71" path="res://scripts/furnace.gd" id="9_i4o3e"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_cofsh"]
 stream_count = 2
@@ -39,11 +38,8 @@ texture = ExtResource("5_i4o3e")
 stream = SubResource("AudioStreamSynchronized_cofsh")
 autoplay = true
 
-[node name="Furnace" type="AnimatedSprite2D" parent="." unique_id=1172992848]
+[node name="Furnace" parent="." unique_id=248506035 instance=ExtResource("8_ef5fi")]
 position = Vector2(100, 292)
-scale = Vector2(4.0657477, 4.0657477)
-sprite_frames = ExtResource("8_ef5fi")
-script = ExtResource("9_i4o3e")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1281066795]
 anchors_preset = 15
@@ -66,4 +62,3 @@ script = ExtResource("9_ef5fi")
 [connection signal="combo_changed" from="." to="Furnace" method="_on_main_game_scene_combo_changed"]
 [connection signal="score_changed" from="." to="MarginContainer/ScoreLabel" method="_on_main_game_scene_score_changed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_2d_finished"]
-[connection signal="frame_changed" from="Furnace" to="Furnace" method="_on_frame_changed"]
