@@ -39,16 +39,16 @@ func _on_main_game_scene_combo_changed() -> void:
 		if Globals.current_combo > 6:
 			if scale_tween == null:
 				pulse_tween()
-			elif rotation_tween == null:
+			if rotation_tween == null:
 				wiggle_tween()
 		elif Globals.current_combo <= 6:
 			if scale_tween != null:
 				scale_tween.kill()
 				scale_tween = null
 				furnace.scale = base_scale
-			elif rotation_tween != null:
+			if rotation_tween != null:
 				rotation_tween.kill()
-				scale_tween = null
+				rotation_tween = null
 				furnace.rotation = base_rotation
 
 	_x.play(str(Globals.current_combo))
@@ -74,21 +74,21 @@ func pulse_tween()-> void:
 func wiggle_tween()-> void:
 	rotation_tween = create_tween()
 	rotation_tween.set_loops()
-	
+	rotation_tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_LINEAR)
 	rotation_tween.tween_method(
 		func(weight: float):
-			var combo_rotation: float = 0.01 * (Globals.current_combo - 6)
+			var combo_rotation: float = 0.002 * (Globals.current_combo - 6)
 			furnace.rotation =  combo_rotation * weight,
 			0.0, 1.0, 0.15
 	)
-	
+	print(furnace.rotation)
 	rotation_tween.tween_method(
 		func(weight: float):
-			var combo_rotation: float = 0.01 * (Globals.current_combo - 6)
+			var combo_rotation: float = 0.002 * (Globals.current_combo - 6)
 			furnace.rotation = combo_rotation * weight, 
 			1.0, -1.0, 0.3
 	)
-	
+	print(furnace.rotation)
 	var start_rotation: float = furnace.rotation
 	rotation_tween.tween_method(
 		func(weight: float):
