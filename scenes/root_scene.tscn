@@ -3,15 +3,34 @@
 [ext_resource type="Script" uid="uid://dcs1xumajfwgc" path="res://scripts/root_scene.gd" id="1_cgud6"]
 [ext_resource type="PackedScene" uid="uid://ge7ns64lrjxs" path="res://scenes/main_game_scene.tscn" id="1_kc8py"]
 [ext_resource type="PackedScene" uid="uid://cj2caray54lny" path="res://scenes/title_screen.tscn" id="2_sfakk"]
+[ext_resource type="PackedScene" uid="uid://baaqi13drdl62" path="res://scenes/settings_menu.tscn" id="3_o1iog"]
 [ext_resource type="PackedScene" uid="uid://bf37i1c68tifw" path="res://scenes/game_over_screen.tscn" id="4_docf2"]
+[ext_resource type="Script" uid="uid://dfw3kqaubnve8" path="res://scripts/settings_manager.gd" id="6_72xyp"]
+[ext_resource type="AudioBusLayout" uid="uid://1kfaf0n0ljhm" path="res://default_bus_layout.tres" id="7_72xyp"]
 
 [node name="RootScene" type="Node" unique_id=302167452]
 script = ExtResource("1_cgud6")
 title_screen_scene = ExtResource("2_sfakk")
+settings_menu_scene = ExtResource("3_o1iog")
 main_game_scene = ExtResource("1_kc8py")
 game_over_screen_scene = ExtResource("4_docf2")
 
-[node name="TitleScreen" parent="." unique_id=1742133454 instance=ExtResource("2_sfakk")]
+[node name="GameScreen" type="Node" parent="." unique_id=980998009]
 
-[connection signal="open_settings_menu" from="TitleScreen" to="." method="_on_title_screen_open_settings_menu"]
-[connection signal="start_game" from="TitleScreen" to="." method="_on_title_screen_start_game"]
+[node name="TitleScreen" parent="GameScreen" unique_id=1742133454 instance=ExtResource("2_sfakk")]
+
+[node name="SettingsManager" type="Node" parent="." unique_id=1150349880]
+script = ExtResource("6_72xyp")
+bus_layout = ExtResource("7_72xyp")
+
+[node name="Dimmer" type="ColorRect" parent="SettingsManager" unique_id=989919187]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[connection signal="open_settings_menu" from="GameScreen/TitleScreen" to="." method="_on_title_screen_open_settings_menu"]
+[connection signal="start_game" from="GameScreen/TitleScreen" to="." method="_on_title_screen_start_game"]

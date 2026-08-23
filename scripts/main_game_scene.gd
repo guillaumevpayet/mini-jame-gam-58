@@ -13,7 +13,7 @@ class_name MainGameScene
 
 signal score_changed(score: int, minimum_target_score: int)
 signal combo_changed(combo: int)
-signal game_over(win: bool)
+signal game_over(perfect_count: int, ok_count: int, miss_count: int, win: bool)
 
 
 @onready var _audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
@@ -24,6 +24,9 @@ var _score: int
 var _miss_streak: int = 0
 var _combo: int = 0
 var _song_timings: Array[RhythmTimingWindow]
+var _perfect_count: int = 0
+var _ok_count: int = 0
+var _miss_count: int = 0
 
 func _ready() -> void:
 	score_changed.emit(_score, song.minimum_target_score)
@@ -57,13 +60,16 @@ func _create_beat_marker(marker_position: Vector2):
 func _on_BeatMarker_score_obtained(score: int):
 	match score:
 		0:
+			_miss_count += 1
 			_miss_streak += 1
 			_combo = 0
 		1:
+			_ok_count += 1
 			_score += song.score_increase_for_low_hit * (1 + _combo)
 			_miss_streak = 0
 			_combo += 1
 		2:
+			_perfect_count += 1
 			_score += song.score_increase_for_high_hit * (1 + _combo)
 			_miss_streak = 0
 			_combo += 1
@@ -75,8 +81,8 @@ func _on_BeatMarker_score_obtained(score: int):
 	combo_changed.emit(_combo)
 
 	if _miss_streak >= miss_tolerance:
-		game_over.emit(false)
+		game_over.emit(_perfect_count, _ok_count, _miss_count, false)
 
 
 func _on_audio_stream_player_2d_finished() -> void:
-	game_over.emit(_score >= song.minimum_target_score)
+	game_over.emit(_perfect_count, _ok_count, _miss_count, _score >= song.minimum_target_score)

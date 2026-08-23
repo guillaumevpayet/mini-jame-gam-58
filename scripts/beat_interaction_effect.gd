@@ -1,5 +1,5 @@
 extends AudioStreamPlayer2D
-class_name SoundEffect
+class_name BeatInteractionEffect
 
 
 @export var perfect_hit_sounds: Array[AudioStream]
@@ -26,7 +26,10 @@ func play_ok_hit() -> void:
 
 func play_miss() -> void:
 	stream = miss_sounds.pick_random()
-	play()
+	
+	if is_inside_tree():
+		play()
+	
 	_particles_finished = true
 
 

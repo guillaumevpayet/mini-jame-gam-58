@@ -49,7 +49,6 @@ theme = ExtResource("3_dc4i4")
 text = "Start!"
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=236043499]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_dc4i4")

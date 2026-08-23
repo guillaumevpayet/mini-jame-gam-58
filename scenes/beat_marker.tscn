@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://nskf2kc52kf"]
 
 [ext_resource type="Script" uid="uid://vfm1x0h7bs6q" path="res://scripts/beat_marker.gd" id="1_pom5a"]
-[ext_resource type="PackedScene" uid="uid://bh6sekirxqtfo" path="res://scenes/sound_effect.tscn" id="2_t880s"]
+[ext_resource type="PackedScene" uid="uid://bh6sekirxqtfo" path="res://scenes/beat_interaction_effect.tscn" id="2_t880s"]
 [ext_resource type="Texture2D" uid="uid://7q0tuok25hvn" path="res://assets/Indicator Ring.png" id="3_t880s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pom5a"]
