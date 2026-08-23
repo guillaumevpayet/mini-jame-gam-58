@@ -81,14 +81,12 @@ func wiggle_tween()-> void:
 			furnace.rotation =  combo_rotation * weight,
 			0.0, 1.0, 0.15
 	)
-	print(furnace.rotation)
 	rotation_tween.tween_method(
 		func(weight: float):
 			var combo_rotation: float = 0.002 * (Globals.current_combo - 6)
 			furnace.rotation = combo_rotation * weight, 
 			1.0, -1.0, 0.3
 	)
-	print(furnace.rotation)
 	var start_rotation: float = furnace.rotation
 	rotation_tween.tween_method(
 		func(weight: float):
