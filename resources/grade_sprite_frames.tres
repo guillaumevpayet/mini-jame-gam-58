@@ -1,0 +1,78 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bfh6otvrjycid"]
+
+[ext_resource type="Texture2D" uid="uid://dgkv02o2dwij4" path="res://assets/grading letters.png" id="1_s1jqt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n75f"]
+atlas = ExtResource("1_s1jqt")
+region = Rect2(154, 6, 27, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qd6s"]
+atlas = ExtResource("1_s1jqt")
+region = Rect2(111, 6, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6pdo"]
+atlas = ExtResource("1_s1jqt")
+region = Rect2(59, 6, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8w3r"]
+atlas = ExtResource("1_s1jqt")
+region = Rect2(16, 6, 18, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dv60"]
+atlas = ExtResource("1_s1jqt")
+region = Rect2(206, 6, 20, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjji3"]
+atlas = ExtResource("1_s1jqt")
+region = Rect2(244, 6, 41, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6n75f")
+}],
+"loop": 1,
+"name": &"A",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qd6s")
+}],
+"loop": 1,
+"name": &"B",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6pdo")
+}],
+"loop": 1,
+"name": &"C",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8w3r")
+}],
+"loop": 1,
+"name": &"D",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dv60")
+}],
+"loop": 1,
+"name": &"S",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjji3")
+}],
+"loop": 1,
+"name": &"SS",
+"speed": 5.0
+}]

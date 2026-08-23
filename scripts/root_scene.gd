@@ -28,9 +28,9 @@ func _on_settings_menu_close_menu() -> void:
 	title_screen.open_settings_menu.connect(_on_title_screen_open_settings_menu)
 	_replace_scene(title_screen)
 
-func _on_main_game_screen_game_over(win: bool) -> void:
+func _on_main_game_screen_game_over(perfect_count: int, ok_count: int, miss_count: int, win: bool) -> void:
 	var game_over_screen: GameOverScreen = game_over_screen_scene.instantiate()
-	game_over_screen.init(win)
+	game_over_screen.init(perfect_count, ok_count, miss_count, win)
 	game_over_screen.restart_game.connect(_on_game_over_screen_restart_game)
 	_replace_scene(game_over_screen)
 

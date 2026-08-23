@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b3ly7o5gxd0b" path="res://scripts/game_over_screen.gd" id="1_iwahs"]
 [ext_resource type="Texture2D" uid="uid://ctuqkqphndxg3" path="res://assets/stone smithing room test.png" id="2_61w2s"]
+[ext_resource type="Material" uid="uid://br5r21fuvbhp0" path="res://resources/heatwave_shader_material.tres" id="3_cyfkl"]
 [ext_resource type="Theme" uid="uid://bv5pyfb4sv77p" path="res://resources/theme.tres" id="3_jw6e5"]
+[ext_resource type="SpriteFrames" uid="uid://bfh6otvrjycid" path="res://resources/grade_sprite_frames.tres" id="4_xx0b3"]
 
 [node name="GameOverScreen" type="Control" unique_id=1469725216]
 layout_mode = 3
@@ -30,11 +32,34 @@ theme_override_font_sizes/font_size = 128
 text = "You Lose!"
 horizontal_alignment = 1
 
+[node name="GradeContainer" type="Control" parent="." unique_id=438156704]
+anchors_preset = 0
+offset_left = 200.1
+offset_top = 144.045
+offset_right = 895.1
+offset_bottom = 361.04492
+
+[node name="Label" type="Label" parent="GradeContainer" unique_id=825053505]
+layout_mode = 0
+offset_right = 587.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 128
+text = "Grade:"
+horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GradeContainer" unique_id=412442714]
+material = ExtResource("3_cyfkl")
+position = Vector2(618.565, 57.79)
+scale = Vector2(5.095, 5.095)
+sprite_frames = ExtResource("4_xx0b3")
+animation = &"D"
+
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1924227324]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 164.0
 grow_horizontal = 2
 grow_vertical = 2
 
