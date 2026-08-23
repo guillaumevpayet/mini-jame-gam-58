@@ -15,7 +15,7 @@ signal score_changed(score: int, minimum_target_score: int)
 signal combo_changed(combo: int)
 
 
-@onready var _audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var _audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 var _next_timing_window_index: int
@@ -29,6 +29,8 @@ func _ready() -> void:
 	combo_changed.emit(_combo)
 	_song_timings = song.timing_windows
 	_song_timings.sort_custom(func(a: RhythmTimingWindow, b: RhythmTimingWindow): return a.timestamp < b.timestamp)
+	get_viewport().physics_object_picking_sort = true      # order by z_index / tree order
+	get_viewport().physics_object_picking_first_only = true # only the "top" one gets the event
 
 func _process(_delta: float) -> void:
 	var playback_position: float = _audio_stream_player.get_playback_position()
@@ -47,7 +49,8 @@ func _create_beat_marker(marker_position: Vector2):
 	var marker: BeatMarker = beat_marker.instantiate()
 	marker.init(marker_position, time_before_beat)
 	marker.score_obtained.connect(_on_BeatMarker_score_obtained)
-	add_child(marker)
+	$BeatMarkersContainer.add_child(marker)
+	$BeatMarkersContainer.move_child(marker, 0)
 
 
 func _on_BeatMarker_score_obtained(score: int):

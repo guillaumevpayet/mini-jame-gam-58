@@ -1,25 +1,20 @@
 [gd_scene format=3 uid="uid://ge7ns64lrjxs"]
 
 [ext_resource type="Script" uid="uid://7yhetykehgr5" path="res://scripts/main_game_scene.gd" id="1_ilxj7"]
+[ext_resource type="Resource" uid="uid://d0770sn4iiq37" path="res://resources/songs/song_1/rhythm_song.tres" id="2_cofsh"]
 [ext_resource type="PackedScene" uid="uid://nskf2kc52kf" path="res://scenes/beat_marker.tscn" id="3_4a4v8"]
 [ext_resource type="PackedScene" uid="uid://bf37i1c68tifw" path="res://scenes/game_over_screen.tscn" id="4_ef5fi"]
 [ext_resource type="Texture2D" uid="uid://g634qog2nadv" path="res://assets/Anvil surface.png" id="5_4a4v8"]
 [ext_resource type="Texture2D" uid="uid://ck0dnelt8qjhm" path="res://assets/shortsword sprite.png" id="5_i4o3e"]
 [ext_resource type="AudioStream" uid="uid://bxqsfrod5jouy" path="res://resources/songs/song_1/bs_1_no_perc.ogg" id="7_cofsh"]
-[ext_resource type="SpriteFrames" uid="uid://3s8i7vi63mrx" path="res://resources/combo_frames.tres" id="8_ef5fi"]
+[ext_resource type="PackedScene" uid="uid://6dvuh4twcv1d" path="res://scenes/furnace.tscn" id="8_i4o3e"]
 [ext_resource type="AudioStream" uid="uid://cbwqcwlk2hsw0" path="res://resources/songs/song_1/bs_1_perc_only.ogg" id="8_u2xxy"]
 [ext_resource type="Script" uid="uid://don0g2v2togm4" path="res://scripts/score_label.gd" id="9_ef5fi"]
 [ext_resource type="Script" uid="uid://cvdihqrj138eb" path="res://scripts/shakeable_camera_2d.gd" id="10_i4o3e"]
 
-[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_cofsh"]
-stream_count = 2
-stream_0/stream = ExtResource("7_cofsh")
-stream_0/volume = 0.0
-stream_1/stream = ExtResource("8_u2xxy")
-stream_1/volume = 0.0
-
 [node name="MainGameScene" type="Node" unique_id=1377299564]
 script = ExtResource("1_ilxj7")
+song = ExtResource("2_cofsh")
 beat_marker = ExtResource("3_4a4v8")
 gameOverScreenScene = ExtResource("4_ef5fi")
 time_before_beat = 1.0
@@ -36,10 +31,14 @@ scale = Vector2(5.8836513, 5.8836513)
 texture = ExtResource("5_i4o3e")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1679130757]
-stream = SubResource("AudioStreamSynchronized_cofsh")
+stream = ExtResource("7_cofsh")
 autoplay = true
 
-[node name="Furnace" parent="." unique_id=248506035 instance=ExtResource("8_ef5fi")]
+[node name="PercussionsAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=789726541]
+stream = ExtResource("8_u2xxy")
+autoplay = true
+
+[node name="Furnace" parent="." unique_id=248506035 instance=ExtResource("8_i4o3e")]
 position = Vector2(100, 292)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1281066795]
@@ -64,7 +63,8 @@ script = ExtResource("9_ef5fi")
 offset = Vector2(576, 324)
 script = ExtResource("10_i4o3e")
 
+[node name="BeatMarkersContainer" type="Node" parent="." unique_id=867851737]
+
 [connection signal="combo_changed" from="." to="Furnace" method="_on_main_game_scene_combo_changed"]
 [connection signal="score_changed" from="." to="MarginContainer/ScoreLabel" method="_on_main_game_scene_score_changed"]
 [connection signal="score_changed" from="." to="ShakeableCamera2D" method="_on_main_game_scene_score_changed"]
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_2d_finished"]
