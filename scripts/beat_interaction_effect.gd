@@ -16,11 +16,13 @@ var _particles_finished: bool
 
 func play_perfect_hit() -> void:
 	stream = perfect_hit_sounds.pick_random()
+	_particles.amount = 3 + int(Globals.current_combo/2)
 	play()
 	_particles.emitting = true
 
 func play_ok_hit() -> void:
 	stream = ok_hit_sounds.pick_random()
+	_particles.amount = 3
 	play()
 	_particles.emitting = true
 
