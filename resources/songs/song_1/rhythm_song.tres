@@ -1,868 +1,1126 @@
-[gd_resource type="Resource" script_class="RhythmSong" format=3 uid="uid://cr0wv66mq558a"]
+[gd_resource type="Resource" script_class="RhythmSong" format=3 uid="uid://bbapx2q1gpjtj"]
 
 [ext_resource type="Script" uid="uid://e13yv6wrw13f" path="res://addons/rhythm_generator/rhythm_song.gd" id="1_nmfex"]
 [ext_resource type="Script" uid="uid://ckholaxaj3dpf" path="res://addons/rhythm_generator/rhythm_timing_window.gd" id="2_8480h"]
 
 [sub_resource type="Resource" id="Resource_nmfex"]
 script = ExtResource("2_8480h")
-timestamp = 0.00117913832199546
-position = Vector2(783, 388)
+timestamp = 0.00111111111111111
+position = Vector2(907, 460)
 
 [sub_resource type="Resource" id="Resource_8480h"]
 script = ExtResource("2_8480h")
 timestamp = 1.0013151927437642
-position = Vector2(681, 278)
+position = Vector2(1075, 584)
 
 [sub_resource type="Resource" id="Resource_hfcvd"]
 script = ExtResource("2_8480h")
 timestamp = 2.001859410430839
-position = Vector2(568, 229)
+position = Vector2(995, 526)
 
 [sub_resource type="Resource" id="Resource_tsuwv"]
 script = ExtResource("2_8480h")
-timestamp = 3.0001814058956917
-position = Vector2(489, 186)
+timestamp = 3.000136054421769
+position = Vector2(796, 345)
 
 [sub_resource type="Resource" id="Resource_fgwoi"]
 script = ExtResource("2_8480h")
 timestamp = 4.001859410430839
-position = Vector2(575.5, 323.5)
+position = Vector2(701, 346)
 
 [sub_resource type="Resource" id="Resource_27dgb"]
 script = ExtResource("2_8480h")
-timestamp = 5.001360544217687
-position = Vector2(850, 425)
+timestamp = 5.001292517006803
+position = Vector2(494, 197)
 
 [sub_resource type="Resource" id="Resource_37611"]
 script = ExtResource("2_8480h")
-timestamp = 6.001859410430839
-position = Vector2(920, 453)
+timestamp = 5.5003401360544215
+position = Vector2(561, 231)
 
 [sub_resource type="Resource" id="Resource_frhl6"]
 script = ExtResource("2_8480h")
-timestamp = 7.001360544217687
-position = Vector2(1057, 524)
+timestamp = 5.751791383219954
+position = Vector2(572, 297)
 
 [sub_resource type="Resource" id="Resource_2nog6"]
 script = ExtResource("2_8480h")
-timestamp = 8.000204081632653
-position = Vector2(575.5, 323.5)
+timestamp = 6.001859410430839
+position = Vector2(788, 439)
 
 [sub_resource type="Resource" id="Resource_vglo5"]
 script = ExtResource("2_8480h")
-timestamp = 8.501519274376417
-position = Vector2(682, 362)
+timestamp = 7.001292517006803
+position = Vector2(656, 280)
 
 [sub_resource type="Resource" id="Resource_inmfy"]
 script = ExtResource("2_8480h")
-timestamp = 9.00140589569161
-position = Vector2(514, 270)
+timestamp = 8.00015873015873
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_16jbh"]
 script = ExtResource("2_8480h")
-timestamp = 10.00185941043084
-position = Vector2(769, 337)
+timestamp = 8.501337868480725
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_e6e47"]
 script = ExtResource("2_8480h")
-timestamp = 11.00140589569161
-position = Vector2(651, 279)
+timestamp = 9.00124716553288
+position = Vector2(737, 399)
 
 [sub_resource type="Resource" id="Resource_5njub"]
 script = ExtResource("2_8480h")
-timestamp = 11.25140589569161
-position = Vector2(588, 267)
+timestamp = 9.500362811791383
+position = Vector2(878, 398)
 
 [sub_resource type="Resource" id="Resource_jfcrh"]
 script = ExtResource("2_8480h")
-timestamp = 12.00185941043084
-position = Vector2(467, 208)
+timestamp = 9.753038548752835
+position = Vector2(815, 369)
 
 [sub_resource type="Resource" id="Resource_qmgqc"]
 script = ExtResource("2_8480h")
-timestamp = 13.000181405895692
-position = Vector2(549, 185)
+timestamp = 10.00185941043084
+position = Vector2(1035, 513)
 
 [sub_resource type="Resource" id="Resource_qb1wm"]
 script = ExtResource("2_8480h")
-timestamp = 13.250181405895692
-position = Vector2(575.5, 323.5)
+timestamp = 11.001360544217688
+position = Vector2(948, 483)
 
 [sub_resource type="Resource" id="Resource_6ipwb"]
 script = ExtResource("2_8480h")
-timestamp = 14.00204081632653
-position = Vector2(828, 465)
+timestamp = 11.25140589569161
+position = Vector2(721, 305)
 
 [sub_resource type="Resource" id="Resource_kgeir"]
 script = ExtResource("2_8480h")
-timestamp = 15.001428571428573
-position = Vector2(852, 383)
+timestamp = 12.00185941043084
+position = Vector2(459, 202)
 
 [sub_resource type="Resource" id="Resource_38jmt"]
 script = ExtResource("2_8480h")
-timestamp = 16.00018140589569
-position = Vector2(1033, 552)
+timestamp = 13.000113378684809
+position = Vector2(550, 200)
 
 [sub_resource type="Resource" id="Resource_y0kxt"]
 script = ExtResource("2_8480h")
-timestamp = 17.001814058956917
-position = Vector2(575.5, 323.5)
+timestamp = 13.25015873015873
+position = Vector2(647, 319)
 
 [sub_resource type="Resource" id="Resource_ikbyv"]
 script = ExtResource("2_8480h")
-timestamp = 18.001950113378683
-position = Vector2(575.5, 323.5)
+timestamp = 13.500385487528344
+position = Vector2(660, 263)
 
 [sub_resource type="Resource" id="Resource_ix7jp"]
 script = ExtResource("2_8480h")
-timestamp = 19.002312925170067
-position = Vector2(746, 338)
+timestamp = 14.00204081632653
+position = Vector2(563, 271)
 
 [sub_resource type="Resource" id="Resource_cr0wb"]
 script = ExtResource("2_8480h")
-timestamp = 20.00240362811791
-position = Vector2(666, 262)
+timestamp = 15.001201814058955
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_142ra"]
 script = ExtResource("2_8480h")
-timestamp = 21.000453514739228
+timestamp = 16.00018140589569
 position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_tndpd"]
 script = ExtResource("2_8480h")
-timestamp = 22.00185941043084
-position = Vector2(462, 192)
+timestamp = 17.001609977324264
+position = Vector2(812, 437)
 
 [sub_resource type="Resource" id="Resource_rf6oa"]
 script = ExtResource("2_8480h")
-timestamp = 23.00204081632653
-position = Vector2(557, 190)
+timestamp = 18.001950113378683
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_ycyol"]
 script = ExtResource("2_8480h")
-timestamp = 24.00063492063492
+timestamp = 19.00219954648526
 position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_d2tb3"]
 script = ExtResource("2_8480h")
-timestamp = 24.501678004535147
-position = Vector2(511, 244)
+timestamp = 19.501043083900228
+position = Vector2(761, 390)
 
 [sub_resource type="Resource" id="Resource_k7s8b"]
 script = ExtResource("2_8480h")
-timestamp = 25.001541950113378
-position = Vector2(575.5, 323.5)
+timestamp = 20.00240362811791
+position = Vector2(877, 427)
 
 [sub_resource type="Resource" id="Resource_ifrjx"]
 script = ExtResource("2_8480h")
-timestamp = 26.002766439909298
-position = Vector2(845, 383)
+timestamp = 21.000385487528344
+position = Vector2(1002, 509)
 
 [sub_resource type="Resource" id="Resource_ywpop"]
 script = ExtResource("2_8480h")
-timestamp = 27.000839002267572
-position = Vector2(956, 470)
+timestamp = 21.500544217687075
+position = Vector2(1103, 582)
 
 [sub_resource type="Resource" id="Resource_wmduk"]
 script = ExtResource("2_8480h")
-timestamp = 27.251587301587303
-position = Vector2(781, 433)
+timestamp = 22.00185941043084
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_k01cm"]
 script = ExtResource("2_8480h")
-timestamp = 28.002222222222223
-position = Vector2(722, 372)
+timestamp = 23.00204081632653
+position = Vector2(700, 340)
 
 [sub_resource type="Resource" id="Resource_3wh3c"]
 script = ExtResource("2_8480h")
-timestamp = 29.001496598639456
-position = Vector2(669, 292)
+timestamp = 23.437301587301587
+position = Vector2(840, 376)
 
 [sub_resource type="Resource" id="Resource_502bh"]
 script = ExtResource("2_8480h")
-timestamp = 29.25192743764172
-position = Vector2(763, 328)
+timestamp = 24.000589569160997
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_vsv78"]
 script = ExtResource("2_8480h")
-timestamp = 30.00267573696145
-position = Vector2(881, 449)
+timestamp = 24.501609977324264
+position = Vector2(481, 224)
 
 [sub_resource type="Resource" id="Resource_k6s38"]
 script = ExtResource("2_8480h")
-timestamp = 31.001950113378683
-position = Vector2(1023, 515)
+timestamp = 25.001473922902495
+position = Vector2(629, 260)
 
 [sub_resource type="Resource" id="Resource_fhomg"]
 script = ExtResource("2_8480h")
-timestamp = 32.00018140589569
-position = Vector2(575.5, 323.5)
+timestamp = 25.50204081632653
+position = Vector2(544, 241)
 
 [sub_resource type="Resource" id="Resource_7w6ok"]
 script = ExtResource("2_8480h")
-timestamp = 33.00018140589569
-position = Vector2(614, 218)
+timestamp = 26.002766439909298
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_hjaww"]
 script = ExtResource("2_8480h")
-timestamp = 34.00185941043084
-position = Vector2(451, 202)
+timestamp = 27.00079365079365
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_42b5l"]
 script = ExtResource("2_8480h")
-timestamp = 35.00142857142857
-position = Vector2(518, 167)
+timestamp = 27.25140589569161
+position = Vector2(509, 171)
 
 [sub_resource type="Resource" id="Resource_hdrgk"]
 script = ExtResource("2_8480h")
-timestamp = 36.00185941043084
+timestamp = 27.500997732426303
 position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_18162"]
 script = ExtResource("2_8480h")
-timestamp = 37.00018140589569
-position = Vector2(575.5, 323.5)
+timestamp = 28.002222222222223
+position = Vector2(782, 427)
 
 [sub_resource type="Resource" id="Resource_5rljv"]
 script = ExtResource("2_8480h")
-timestamp = 38.00185941043084
-position = Vector2(575.5, 323.5)
+timestamp = 29.001337868480725
+position = Vector2(865, 448)
 
 [sub_resource type="Resource" id="Resource_cuw3g"]
 script = ExtResource("2_8480h")
-timestamp = 39.001451247165534
-position = Vector2(825, 372)
+timestamp = 29.2518820861678
+position = Vector2(655, 332)
 
 [sub_resource type="Resource" id="Resource_nyprc"]
 script = ExtResource("2_8480h")
-timestamp = 40.001496598639456
-position = Vector2(745, 354)
+timestamp = 30.00267573696145
+position = Vector2(712, 287)
 
 [sub_resource type="Resource" id="Resource_ex8e0"]
 script = ExtResource("2_8480h")
-timestamp = 40.50018140589569
-position = Vector2(678, 351)
+timestamp = 31.001950113378683
+position = Vector2(943, 459)
 
 [sub_resource type="Resource" id="Resource_e5ws7"]
 script = ExtResource("2_8480h")
-timestamp = 41.00131519274377
-position = Vector2(502, 243)
+timestamp = 32.00011337868481
+position = Vector2(1005, 545)
 
 [sub_resource type="Resource" id="Resource_es161"]
 script = ExtResource("2_8480h")
-timestamp = 42.00185941043084
-position = Vector2(575.5, 323.5)
+timestamp = 33.00015873015873
+position = Vector2(1080, 571)
 
 [sub_resource type="Resource" id="Resource_j7f7h"]
 script = ExtResource("2_8480h")
-timestamp = 43.00018140589569
+timestamp = 33.50061224489796
 position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_vtfea"]
 script = ExtResource("2_8480h")
-timestamp = 43.25136054421769
-position = Vector2(646, 299)
+timestamp = 34.00185941043084
+position = Vector2(649, 268)
 
 [sub_resource type="Resource" id="Resource_e70ec"]
 script = ExtResource("2_8480h")
-timestamp = 44.00185941043084
-position = Vector2(527, 173)
+timestamp = 35.00120181405896
+position = Vector2(478, 147)
 
 [sub_resource type="Resource" id="Resource_mle4u"]
 script = ExtResource("2_8480h")
-timestamp = 45.00136054421769
-position = Vector2(575.5, 323.5)
+timestamp = 35.501995464852605
+position = Vector2(569, 236)
 
 [sub_resource type="Resource" id="Resource_lu4kd"]
 script = ExtResource("2_8480h")
-timestamp = 45.25020408163265
-position = Vector2(447, 229)
+timestamp = 36.00185941043084
+position = Vector2(755, 354)
 
 [sub_resource type="Resource" id="Resource_t8vnn"]
 script = ExtResource("2_8480h")
-timestamp = 46.00231292517007
-position = Vector2(596, 247)
+timestamp = 37.00018140589569
+position = Vector2(831, 466)
 
 [sub_resource type="Resource" id="Resource_l7ir1"]
 script = ExtResource("2_8480h")
-timestamp = 47.00151927437642
-position = Vector2(575.5, 323.5)
+timestamp = 37.50038548752835
+position = Vector2(827, 370)
 
 [sub_resource type="Resource" id="Resource_1tpda"]
 script = ExtResource("2_8480h")
-timestamp = 48.00140589569161
-position = Vector2(819, 359)
+timestamp = 38.00185941043084
+position = Vector2(675, 353)
 
 [sub_resource type="Resource" id="Resource_mmeje"]
 script = ExtResource("2_8480h")
-timestamp = 49.00140589569161
-position = Vector2(832, 453)
+timestamp = 39.00124716553288
+position = Vector2(914, 490)
 
 [sub_resource type="Resource" id="Resource_645n5"]
 script = ExtResource("2_8480h")
-timestamp = 50.00185941043084
-position = Vector2(960, 478)
+timestamp = 39.448299319727894
+position = Vector2(977, 538)
 
 [sub_resource type="Resource" id="Resource_iqqp7"]
 script = ExtResource("2_8480h")
-timestamp = 51.00140589569161
-position = Vector2(732, 385)
+timestamp = 40.00138321995465
+position = Vector2(1084, 563)
 
 [sub_resource type="Resource" id="Resource_wtbcw"]
 script = ExtResource("2_8480h")
-timestamp = 52.00185941043084
-position = Vector2(575.5, 323.5)
+timestamp = 40.50011337868481
+position = Vector2(977, 473)
 
 [sub_resource type="Resource" id="Resource_ajplp"]
 script = ExtResource("2_8480h")
-timestamp = 53.00018140589569
-position = Vector2(667, 294)
+timestamp = 41.00131519274377
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_r0lda"]
 script = ExtResource("2_8480h")
-timestamp = 54.00185941043084
-position = Vector2(504, 155)
+timestamp = 42.00185941043084
+position = Vector2(484, 157)
 
 [sub_resource type="Resource" id="Resource_np0go"]
 script = ExtResource("2_8480h")
-timestamp = 55.00018140589569
-position = Vector2(575.5, 323.5)
+timestamp = 43.000136054421766
+position = Vector2(432, 217)
 
 [sub_resource type="Resource" id="Resource_40cj6"]
 script = ExtResource("2_8480h")
-timestamp = 56.00142857142857
-position = Vector2(575.5, 323.5)
+timestamp = 43.25136054421769
+position = Vector2(641, 245)
 
 [sub_resource type="Resource" id="Resource_pdcx0"]
 script = ExtResource("2_8480h")
-timestamp = 56.50018140589569
-position = Vector2(450, 200)
+timestamp = 44.00185941043084
+position = Vector2(799, 434)
 
 [sub_resource type="Resource" id="Resource_soema"]
 script = ExtResource("2_8480h")
-timestamp = 57.001451247165534
-position = Vector2(517, 247)
+timestamp = 45.0012925170068
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_eloe7"]
 script = ExtResource("2_8480h")
-timestamp = 58.00185941043084
-position = Vector2(618, 237)
+timestamp = 45.25015873015873
+position = Vector2(568, 266)
 
 [sub_resource type="Resource" id="Resource_tqqq2"]
 script = ExtResource("2_8480h")
-timestamp = 59.00151927437642
-position = Vector2(825, 415)
+timestamp = 46.00231292517007
+position = Vector2(748, 312)
 
 [sub_resource type="Resource" id="Resource_l8hq3"]
 script = ExtResource("2_8480h")
-timestamp = 59.25018140589569
-position = Vector2(880, 482)
+timestamp = 47.001337868480725
+position = Vector2(721, 384)
 
 [sub_resource type="Resource" id="Resource_rvc6e"]
 script = ExtResource("2_8480h")
-timestamp = 60.00185941043084
-position = Vector2(722, 355)
+timestamp = 47.411746031746034
+position = Vector2(860, 460)
 
 [sub_resource type="Resource" id="Resource_vmfg1"]
 script = ExtResource("2_8480h")
-timestamp = 61.00131519274377
-position = Vector2(974, 508)
+timestamp = 48.00124716553288
+position = Vector2(1006, 503)
 
 [sub_resource type="Resource" id="Resource_6ofcr"]
 script = ExtResource("2_8480h")
-timestamp = 61.25018140589569
-position = Vector2(1085, 571)
+timestamp = 49.00136054421769
+position = Vector2(1071, 567)
 
 [sub_resource type="Resource" id="Resource_vxhki"]
 script = ExtResource("2_8480h")
-timestamp = 62.00195011337868
-position = Vector2(575.5, 323.5)
+timestamp = 49.50034013605442
+position = Vector2(943, 488)
 
 [sub_resource type="Resource" id="Resource_vgjin"]
 script = ExtResource("2_8480h")
-timestamp = 63.00136054421769
+timestamp = 49.75179138321995
 position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_kmbxi"]
 script = ExtResource("2_8480h")
-timestamp = 64.00136054421769
-position = Vector2(575.5, 323.5)
+timestamp = 50.00185941043084
+position = Vector2(483, 244)
 
 [sub_resource type="Resource" id="Resource_b38xf"]
 script = ExtResource("2_8480h")
-timestamp = 64.25020408163266
-position = Vector2(691, 275)
+timestamp = 51.00140589569161
+position = Vector2(502, 160)
 
 [sub_resource type="Resource" id="Resource_ru5o7"]
 script = ExtResource("2_8480h")
-timestamp = 65.00185941043084
-position = Vector2(519, 239)
+timestamp = 51.50036281179138
+position = Vector2(634, 252)
 
 [sub_resource type="Resource" id="Resource_o5rps"]
 script = ExtResource("2_8480h")
-timestamp = 66.00151927437642
-position = Vector2(602, 229)
+timestamp = 51.75303854875283
+position = Vector2(637, 323)
 
 [sub_resource type="Resource" id="Resource_gbdt8"]
 script = ExtResource("2_8480h")
-timestamp = 66.2514058956916
-position = Vector2(459, 191)
+timestamp = 52.00185941043084
+position = Vector2(699, 321)
 
 [sub_resource type="Resource" id="Resource_fetmd"]
 script = ExtResource("2_8480h")
-timestamp = 67.0025850340136
-position = Vector2(575.5, 323.5)
+timestamp = 53.00011337868481
+position = Vector2(781, 342)
 
 [sub_resource type="Resource" id="Resource_01uv0"]
 script = ExtResource("2_8480h")
-timestamp = 68.0014058956916
-position = Vector2(719, 384)
+timestamp = 54.00185941043084
+position = Vector2(881, 416)
 
 [sub_resource type="Resource" id="Resource_a7l36"]
 script = ExtResource("2_8480h")
-timestamp = 69.0014058956916
-position = Vector2(855, 468)
+timestamp = 55.00015873015873
+position = Vector2(763, 416)
 
 [sub_resource type="Resource" id="Resource_jh3jw"]
 script = ExtResource("2_8480h")
-timestamp = 70.00185941043084
-position = Vector2(838, 380)
+timestamp = 55.43185941043084
+position = Vector2(824, 391)
 
 [sub_resource type="Resource" id="Resource_opvpq"]
 script = ExtResource("2_8480h")
-timestamp = 71.00018140589569
-position = Vector2(977, 479)
+timestamp = 56.00120181405896
+position = Vector2(918, 485)
 
 [sub_resource type="Resource" id="Resource_x6rwq"]
 script = ExtResource("2_8480h")
-timestamp = 72.00185941043084
-position = Vector2(575.5, 323.5)
+timestamp = 56.50018140589569
+position = Vector2(1013, 519)
 
 [sub_resource type="Resource" id="Resource_hot7i"]
 script = ExtResource("2_8480h")
-timestamp = 73.00018140589569
-position = Vector2(575.5, 323.5)
+timestamp = 57.00124716553288
+position = Vector2(1072, 556)
 
 [sub_resource type="Resource" id="Resource_31psk"]
 script = ExtResource("2_8480h")
-timestamp = 74.00185941043084
+timestamp = 57.50038548752835
 position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_8y5h6"]
 script = ExtResource("2_8480h")
-timestamp = 75.00142857142858
-position = Vector2(652, 336)
+timestamp = 58.00185941043084
+position = Vector2(532, 261)
 
 [sub_resource type="Resource" id="Resource_is6bi"]
 script = ExtResource("2_8480h")
-timestamp = 76.00018140589569
-position = Vector2(544, 238)
+timestamp = 59.00138321995465
+position = Vector2(482, 196)
 
 [sub_resource type="Resource" id="Resource_enacw"]
 script = ExtResource("2_8480h")
-timestamp = 76.50145124716553
-position = Vector2(623, 251)
+timestamp = 59.25011337868481
+position = Vector2(618, 251)
 
 [sub_resource type="Resource" id="Resource_3f2m4"]
 script = ExtResource("2_8480h")
-timestamp = 77.00149659863946
-position = Vector2(471, 212)
+timestamp = 60.00185941043084
+position = Vector2(723, 299)
 
 [sub_resource type="Resource" id="Resource_6vvu7"]
 script = ExtResource("2_8480h")
-timestamp = 78.00185941043084
+timestamp = 61.00131519274377
 position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_wl2tk"]
 script = ExtResource("2_8480h")
-timestamp = 79.00018140589569
-position = Vector2(753, 314)
+timestamp = 61.250136054421766
+position = Vector2(766, 379)
 
 [sub_resource type="Resource" id="Resource_sp6le"]
 script = ExtResource("2_8480h")
-timestamp = 79.25131519274376
-position = Vector2(551, 180)
+timestamp = 61.50036281179138
+position = Vector2(664, 304)
 
 [sub_resource type="Resource" id="Resource_kagxi"]
 script = ExtResource("2_8480h")
-timestamp = 80.00185941043084
-position = Vector2(740, 404)
+timestamp = 62.00195011337868
+position = Vector2(835, 410)
 
 [sub_resource type="Resource" id="Resource_l2p76"]
 script = ExtResource("2_8480h")
-timestamp = 81.00018140589569
-position = Vector2(967, 471)
+timestamp = 63.0012925170068
+position = Vector2(983, 523)
 
 [sub_resource type="Resource" id="Resource_bjmgv"]
 script = ExtResource("2_8480h")
-timestamp = 81.25136054421769
-position = Vector2(854, 458)
+timestamp = 63.413492063492065
+position = Vector2(901, 443)
 
 [sub_resource type="Resource" id="Resource_r63ol"]
 script = ExtResource("2_8480h")
-timestamp = 82.00249433106576
-position = Vector2(834, 373)
+timestamp = 64.0012925170068
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_xrcqh"]
 script = ExtResource("2_8480h")
-timestamp = 83.00145124716553
-position = Vector2(675, 326)
+timestamp = 64.25015873015873
+position = Vector2(529, 235)
 
 [sub_resource type="Resource" id="Resource_5v2ye"]
 script = ExtResource("2_8480h")
-timestamp = 84.00020408163266
-position = Vector2(575.5, 323.5)
+timestamp = 64.5004081632653
+position = Vector2(509, 153)
 
 [sub_resource type="Resource" id="Resource_reate"]
 script = ExtResource("2_8480h")
-timestamp = 85.00151927437642
-position = Vector2(615, 222)
+timestamp = 65.00185941043084
+position = Vector2(603, 214)
 
 [sub_resource type="Resource" id="Resource_ilbij"]
 script = ExtResource("2_8480h")
-timestamp = 86.00185941043084
-position = Vector2(483, 221)
+timestamp = 66.00133786848073
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_2vwnj"]
 script = ExtResource("2_8480h")
-timestamp = 87.0014058956916
-position = Vector2(575.5, 323.5)
+timestamp = 66.25124716553287
+position = Vector2(699, 382)
 
 [sub_resource type="Resource" id="Resource_us1v4"]
 script = ExtResource("2_8480h")
-timestamp = 88.00185941043084
-position = Vector2(575.5, 323.5)
+timestamp = 66.50199546485261
+position = Vector2(774, 344)
 
 [sub_resource type="Resource" id="Resource_gbr85"]
 script = ExtResource("2_8480h")
-timestamp = 89.0014058956916
-position = Vector2(488, 141)
+timestamp = 67.0025850340136
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_oq72t"]
 script = ExtResource("2_8480h")
-timestamp = 90.00185941043084
-position = Vector2(575.5, 323.5)
+timestamp = 67.45925170068027
+position = Vector2(703, 319)
 
 [sub_resource type="Resource" id="Resource_i7lwf"]
 script = ExtResource("2_8480h")
-timestamp = 91.0014058956916
-position = Vector2(776, 432)
+timestamp = 68.00136054421769
+position = Vector2(798, 417)
 
 [sub_resource type="Resource" id="Resource_1aqpe"]
 script = ExtResource("2_8480h")
-timestamp = 92.00018140589567
-position = Vector2(770, 324)
+timestamp = 69.0014058956916
+position = Vector2(1013, 485)
 
 [sub_resource type="Resource" id="Resource_m04gt"]
 script = ExtResource("2_8480h")
-timestamp = 92.50018140589567
-position = Vector2(820, 363)
+timestamp = 69.50049886621315
+position = Vector2(868, 473)
 
 [sub_resource type="Resource" id="Resource_ou650"]
 script = ExtResource("2_8480h")
-timestamp = 93.00142857142858
-position = Vector2(891, 492)
+timestamp = 70.00185941043084
+position = Vector2(846, 373)
 
 [sub_resource type="Resource" id="Resource_l5usv"]
 script = ExtResource("2_8480h")
-timestamp = 94.00185941043084
-position = Vector2(964, 466)
+timestamp = 71.0001133786848
+position = Vector2(1071, 559)
 
 [sub_resource type="Resource" id="Resource_3lgv3"]
 script = ExtResource("2_8480h")
-timestamp = 95.00018140589567
-position = Vector2(1081, 574)
+timestamp = 72.00185941043084
+position = Vector2(993, 560)
 
 [sub_resource type="Resource" id="Resource_u4t1p"]
 script = ExtResource("2_8480h")
-timestamp = 95.25145124716552
-position = Vector2(989, 547)
+timestamp = 73.00015873015873
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_ltwgb"]
 script = ExtResource("2_8480h")
-timestamp = 96.00267573696144
-position = Vector2(575.5, 323.5)
+timestamp = 73.50061224489797
+position = Vector2(556, 200)
 
 [sub_resource type="Resource" id="Resource_0txel"]
 script = ExtResource("2_8480h")
-timestamp = 97.00204081632651
-position = Vector2(463, 225)
+timestamp = 74.00185941043084
+position = Vector2(611, 231)
 
 [sub_resource type="Resource" id="Resource_lexye"]
 script = ExtResource("2_8480h")
-timestamp = 97.25115646258504
-position = Vector2(523, 257)
+timestamp = 75.00120181405896
+position = Vector2(477, 209)
 
 [sub_resource type="Resource" id="Resource_v87rk"]
 script = ExtResource("2_8480h")
-timestamp = 98.00213151927436
-position = Vector2(705, 359)
+timestamp = 76.00018140589569
+position = Vector2(739, 309)
 
 [sub_resource type="Resource" id="Resource_sb76m"]
 script = ExtResource("2_8480h")
-timestamp = 99.00131519274376
-position = Vector2(535, 181)
+timestamp = 76.50124716553287
+position = Vector2(739, 391)
 
 [sub_resource type="Resource" id="Resource_0tw6n"]
 script = ExtResource("2_8480h")
-timestamp = 100.00090702947846
-position = Vector2(682, 284)
+timestamp = 77.00138321995465
+position = Vector2(951, 499)
 
 [sub_resource type="Resource" id="Resource_4m7us"]
 script = ExtResource("2_8480h")
-timestamp = 101.00181405895692
-position = Vector2(867, 405)
+timestamp = 77.50199546485261
+position = Vector2(799, 423)
 
 [sub_resource type="Resource" id="Resource_3qkmk"]
 script = ExtResource("2_8480h")
-timestamp = 102.00204081632651
-position = Vector2(788, 384)
+timestamp = 78.00185941043084
+position = Vector2(687, 356)
 
 [sub_resource type="Resource" id="Resource_xydo8"]
 script = ExtResource("2_8480h")
-timestamp = 103.00240362811792
-position = Vector2(905, 488)
+timestamp = 79.0001133786848
+position = Vector2(882, 443)
 
 [sub_resource type="Resource" id="Resource_f0o3o"]
 script = ExtResource("2_8480h")
-timestamp = 104.00249433106576
-position = Vector2(1072, 571)
+timestamp = 79.25131519274376
+position = Vector2(1005, 529)
 
 [sub_resource type="Resource" id="Resource_ixw4s"]
 script = ExtResource("2_8480h")
-timestamp = 105.00056689342404
-position = Vector2(979, 530)
+timestamp = 79.500589569161
+position = Vector2(1071, 583)
 
 [sub_resource type="Resource" id="Resource_pml3o"]
 script = ExtResource("2_8480h")
-timestamp = 106.00195011337868
+timestamp = 80.00185941043084
 position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_eaxrf"]
 script = ExtResource("2_8480h")
-timestamp = 107.00219954648526
-position = Vector2(575.5, 323.5)
+timestamp = 81.00013605442177
+position = Vector2(587, 227)
 
 [sub_resource type="Resource" id="Resource_os1vn"]
 script = ExtResource("2_8480h")
-timestamp = 108.00195011337868
-position = Vector2(575.5, 323.5)
+timestamp = 81.25136054421769
+position = Vector2(645, 305)
 
 [sub_resource type="Resource" id="Resource_y546f"]
 script = ExtResource("2_8480h")
-timestamp = 108.50181405895692
-position = Vector2(462, 205)
+timestamp = 82.00249433106576
+position = Vector2(540, 176)
 
 [sub_resource type="Resource" id="Resource_a6kkr"]
 script = ExtResource("2_8480h")
-timestamp = 109.00167800453517
-position = Vector2(533, 221)
+timestamp = 83.0012925170068
+position = Vector2(465, 186)
 
 [sub_resource type="Resource" id="Resource_wrkos"]
 script = ExtResource("2_8480h")
-timestamp = 110.00185941043084
-position = Vector2(686, 346)
+timestamp = 83.44768707482993
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_d740f"]
 script = ExtResource("2_8480h")
-timestamp = 111.00090702947846
-position = Vector2(619, 238)
+timestamp = 84.00015873015873
+position = Vector2(767, 331)
 
 [sub_resource type="Resource" id="Resource_dgbpw"]
 script = ExtResource("2_8480h")
-timestamp = 111.25034013605442
-position = Vector2(823, 448)
+timestamp = 85.00133786848073
+position = Vector2(799, 414)
 
 [sub_resource type="Resource" id="Resource_scppi"]
 script = ExtResource("2_8480h")
-timestamp = 112.00231292517007
-position = Vector2(940, 451)
+timestamp = 86.00185941043084
+position = Vector2(884, 435)
 
 [sub_resource type="Resource" id="Resource_gldu6"]
 script = ExtResource("2_8480h")
-timestamp = 113.00160997732426
-position = Vector2(759, 394)
+timestamp = 87.00124716553287
+position = Vector2(713, 384)
 
 [sub_resource type="Resource" id="Resource_a1yvt"]
 script = ExtResource("2_8480h")
-timestamp = 113.25079365079364
-position = Vector2(812, 367)
+timestamp = 88.00185941043084
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_q02f3"]
 script = ExtResource("2_8480h")
-timestamp = 114.0027664399093
-position = Vector2(755, 324)
+timestamp = 89.00126984126985
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_vdunx"]
 script = ExtResource("2_8480h")
-timestamp = 115.00208616780046
-position = Vector2(575.5, 323.5)
+timestamp = 89.50034013605442
+position = Vector2(515, 259)
 
 [sub_resource type="Resource" id="Resource_y7aui"]
 script = ExtResource("2_8480h")
-timestamp = 116.00185941043084
-position = Vector2(575.5, 323.5)
+timestamp = 89.75179138321995
+position = Vector2(640, 276)
 
 [sub_resource type="Resource" id="Resource_68s85"]
 script = ExtResource("2_8480h")
-timestamp = 117.00027210884352
-position = Vector2(460, 196)
+timestamp = 90.00185941043084
+position = Vector2(717, 294)
 
 [sub_resource type="Resource" id="Resource_3axje"]
 script = ExtResource("2_8480h")
-timestamp = 118.00267573696144
-position = Vector2(532, 166)
+timestamp = 91.0014058956916
+position = Vector2(583, 203)
 
 [sub_resource type="Resource" id="Resource_se0x0"]
 script = ExtResource("2_8480h")
-timestamp = 119.0019954648526
-position = Vector2(531, 249)
+timestamp = 91.44691609977323
+position = Vector2(658, 357)
 
 [sub_resource type="Resource" id="Resource_b0wqx"]
 script = ExtResource("2_8480h")
-timestamp = 120.00213151927436
-position = Vector2(688, 273)
+timestamp = 92.0001133786848
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_uypwb"]
 script = ExtResource("2_8480h")
-timestamp = 121.00018140589567
-position = Vector2(662, 359)
+timestamp = 92.50015873015872
+position = Vector2(466, 190)
 
 [sub_resource type="Resource" id="Resource_5ecc5"]
 script = ExtResource("2_8480h")
-timestamp = 122.0025850340136
-position = Vector2(872, 427)
+timestamp = 93.00120181405896
+position = Vector2(575.5, 323.5)
 
 [sub_resource type="Resource" id="Resource_wcdn8"]
 script = ExtResource("2_8480h")
-timestamp = 123.00181405895692
-position = Vector2(951, 493)
+timestamp = 93.50036281179138
+position = Vector2(769, 371)
 
 [sub_resource type="Resource" id="Resource_wilm6"]
 script = ExtResource("2_8480h")
-timestamp = 123.38485260770976
-position = Vector2(1059, 565)
+timestamp = 93.75303854875284
+position = Vector2(781, 435)
 
 [sub_resource type="Resource" id="Resource_qy6g6"]
 script = ExtResource("2_8480h")
-timestamp = 124.00154195011338
-position = Vector2(575.5, 323.5)
+timestamp = 94.00185941043084
+position = Vector2(840, 391)
 
 [sub_resource type="Resource" id="Resource_xjn7n"]
 script = ExtResource("2_8480h")
-timestamp = 124.50024943310656
-position = Vector2(791, 387)
+timestamp = 95.00018140589567
+position = Vector2(922, 432)
 
 [sub_resource type="Resource" id="Resource_7cc1a"]
 script = ExtResource("2_8480h")
-timestamp = 125.00242630385488
-position = Vector2(625, 265)
+timestamp = 95.25124716553287
+position = Vector2(983, 482)
 
 [sub_resource type="Resource" id="Resource_4ashs"]
 script = ExtResource("2_8480h")
-timestamp = 126.00249433106576
-position = Vector2(458, 190)
+timestamp = 96.00267573696144
+position = Vector2(847, 467)
 
 [sub_resource type="Resource" id="Resource_3o58r"]
 script = ExtResource("2_8480h")
-timestamp = 127.001768707483
-position = Vector2(575.5, 323.5)
+timestamp = 97.00179138321997
+position = Vector2(692, 284)
 
 [sub_resource type="Resource" id="Resource_voyag"]
 script = ExtResource("2_8480h")
-timestamp = 127.25219954648526
-position = Vector2(740, 339)
+timestamp = 97.25108843537414
+position = Vector2(539, 187)
 
 [sub_resource type="Resource" id="Resource_01eg5"]
 script = ExtResource("2_8480h")
-timestamp = 128.00185941043082
-position = Vector2(573, 216)
+timestamp = 97.50079365079364
+position = Vector2(523, 269)
 
 [sub_resource type="Resource" id="Resource_sf2bb"]
+script = ExtResource("2_8480h")
+timestamp = 98.00213151927436
+position = Vector2(451, 227)
+
+[sub_resource type="Resource" id="Resource_wjjm5"]
+script = ExtResource("2_8480h")
+timestamp = 99.00131519274376
+position = Vector2(653, 353)
+
+[sub_resource type="Resource" id="Resource_65jgk"]
+script = ExtResource("2_8480h")
+timestamp = 100.00086167800454
+position = Vector2(616, 222)
+
+[sub_resource type="Resource" id="Resource_bsqjg"]
+script = ExtResource("2_8480h")
+timestamp = 101.00174603174604
+position = Vector2(745, 371)
+
+[sub_resource type="Resource" id="Resource_5p20k"]
+script = ExtResource("2_8480h")
+timestamp = 102.00204081632651
+position = Vector2(831, 375)
+
+[sub_resource type="Resource" id="Resource_ij1ek"]
+script = ExtResource("2_8480h")
+timestamp = 103.00219954648526
+position = Vector2(575.5, 323.5)
+
+[sub_resource type="Resource" id="Resource_w4q84"]
+script = ExtResource("2_8480h")
+timestamp = 103.50113378684809
+position = Vector2(786, 434)
+
+[sub_resource type="Resource" id="Resource_b1mhl"]
+script = ExtResource("2_8480h")
+timestamp = 104.00249433106576
+position = Vector2(973, 503)
+
+[sub_resource type="Resource" id="Resource_48nv6"]
+script = ExtResource("2_8480h")
+timestamp = 105.0005215419501
+position = Vector2(1078, 557)
+
+[sub_resource type="Resource" id="Resource_wbk7v"]
+script = ExtResource("2_8480h")
+timestamp = 105.50063492063492
+position = Vector2(912, 450)
+
+[sub_resource type="Resource" id="Resource_7e1qu"]
+script = ExtResource("2_8480h")
+timestamp = 106.00195011337868
+position = Vector2(839, 469)
+
+[sub_resource type="Resource" id="Resource_ifp5s"]
+script = ExtResource("2_8480h")
+timestamp = 107.00201814058956
+position = Vector2(575.5, 323.5)
+
+[sub_resource type="Resource" id="Resource_i0cai"]
+script = ExtResource("2_8480h")
+timestamp = 107.40990929705217
+position = Vector2(468, 211)
+
+[sub_resource type="Resource" id="Resource_4n48a"]
+script = ExtResource("2_8480h")
+timestamp = 108.00179138321997
+position = Vector2(579, 240)
+
+[sub_resource type="Resource" id="Resource_byk5q"]
+script = ExtResource("2_8480h")
+timestamp = 108.501768707483
+position = Vector2(725, 314)
+
+[sub_resource type="Resource" id="Resource_r0iqm"]
+script = ExtResource("2_8480h")
+timestamp = 109.00167800453517
+position = Vector2(653, 252)
+
+[sub_resource type="Resource" id="Resource_8phpl"]
+script = ExtResource("2_8480h")
+timestamp = 109.50213151927436
+position = Vector2(668, 354)
+
+[sub_resource type="Resource" id="Resource_p30jj"]
+script = ExtResource("2_8480h")
+timestamp = 110.00185941043084
+position = Vector2(842, 401)
+
+[sub_resource type="Resource" id="Resource_7cqk8"]
+script = ExtResource("2_8480h")
+timestamp = 111.00083900226755
+position = Vector2(963, 514)
+
+[sub_resource type="Resource" id="Resource_rbygh"]
+script = ExtResource("2_8480h")
+timestamp = 111.25031746031746
+position = Vector2(766, 389)
+
+[sub_resource type="Resource" id="Resource_sfjs2"]
+script = ExtResource("2_8480h")
+timestamp = 111.50108843537414
+position = Vector2(1025, 510)
+
+[sub_resource type="Resource" id="Resource_bb0u5"]
+script = ExtResource("2_8480h")
+timestamp = 112.00231292517007
+position = Vector2(1094, 573)
+
+[sub_resource type="Resource" id="Resource_o3vgm"]
+script = ExtResource("2_8480h")
+timestamp = 113.00138321995465
+position = Vector2(575.5, 323.5)
+
+[sub_resource type="Resource" id="Resource_irouo"]
+script = ExtResource("2_8480h")
+timestamp = 113.25079365079364
+position = Vector2(526, 199)
+
+[sub_resource type="Resource" id="Resource_0j3v6"]
+script = ExtResource("2_8480h")
+timestamp = 114.0027664399093
+position = Vector2(509, 266)
+
+[sub_resource type="Resource" id="Resource_v56b3"]
+script = ExtResource("2_8480h")
+timestamp = 115.00183673469388
+position = Vector2(575.5, 323.5)
+
+[sub_resource type="Resource" id="Resource_nppe6"]
+script = ExtResource("2_8480h")
+timestamp = 116.00174603174604
+position = Vector2(575.5, 323.5)
+
+[sub_resource type="Resource" id="Resource_gxeub"]
+script = ExtResource("2_8480h")
+timestamp = 117.00020408163266
+position = Vector2(605, 244)
+
+[sub_resource type="Resource" id="Resource_y81u6"]
+script = ExtResource("2_8480h")
+timestamp = 117.50156462585034
+position = Vector2(838, 428)
+
+[sub_resource type="Resource" id="Resource_lvijc"]
+script = ExtResource("2_8480h")
+timestamp = 118.00267573696144
+position = Vector2(704, 353)
+
+[sub_resource type="Resource" id="Resource_sh67e"]
+script = ExtResource("2_8480h")
+timestamp = 119.001768707483
+position = Vector2(773, 383)
+
+[sub_resource type="Resource" id="Resource_i6rjx"]
+script = ExtResource("2_8480h")
+timestamp = 119.50240362811792
+position = Vector2(940, 445)
+
+[sub_resource type="Resource" id="Resource_tnoih"]
+script = ExtResource("2_8480h")
+timestamp = 120.00213151927436
+position = Vector2(936, 522)
+
+[sub_resource type="Resource" id="Resource_d735t"]
+script = ExtResource("2_8480h")
+timestamp = 121.00013605442176
+position = Vector2(1062, 555)
+
+[sub_resource type="Resource" id="Resource_y2qro"]
+script = ExtResource("2_8480h")
+timestamp = 121.50124716553287
+position = Vector2(575.5, 323.5)
+
+[sub_resource type="Resource" id="Resource_hcnhg"]
+script = ExtResource("2_8480h")
+timestamp = 122.0025850340136
+position = Vector2(481, 173)
+
+[sub_resource type="Resource" id="Resource_uuax6"]
+script = ExtResource("2_8480h")
+timestamp = 123.00181405895692
+position = Vector2(686, 270)
+
+[sub_resource type="Resource" id="Resource_bpvde"]
+script = ExtResource("2_8480h")
+timestamp = 123.38097505668934
+position = Vector2(514, 223)
+
+[sub_resource type="Resource" id="Resource_kty5l"]
+script = ExtResource("2_8480h")
+timestamp = 124.00147392290248
+position = Vector2(584, 205)
+
+[sub_resource type="Resource" id="Resource_vw40q"]
+script = ExtResource("2_8480h")
+timestamp = 124.50020408163266
+position = Vector2(624, 262)
+
+[sub_resource type="Resource" id="Resource_veyaf"]
+script = ExtResource("2_8480h")
+timestamp = 125.0022448979592
+position = Vector2(731, 334)
+
+[sub_resource type="Resource" id="Resource_hldy4"]
+script = ExtResource("2_8480h")
+timestamp = 126.00249433106576
+position = Vector2(797, 390)
+
+[sub_resource type="Resource" id="Resource_tujqc"]
+script = ExtResource("2_8480h")
+timestamp = 127.00160997732426
+position = Vector2(852, 452)
+
+[sub_resource type="Resource" id="Resource_yorjc"]
+script = ExtResource("2_8480h")
+timestamp = 127.2520634920635
+position = Vector2(1025, 505)
+
+[sub_resource type="Resource" id="Resource_ys1aj"]
+script = ExtResource("2_8480h")
+timestamp = 128.00185941043082
+position = Vector2(575.5, 323.5)
+
+[sub_resource type="Resource" id="Resource_1kfwy"]
 script = ExtResource("2_8480h")
 timestamp = 129.00140589569162
 position = Vector2(575.5, 323.5)
 
-[sub_resource type="Resource" id="Resource_wjjm5"]
+[sub_resource type="Resource" id="Resource_wr8lp"]
 script = ExtResource("2_8480h")
-timestamp = 129.2501814058957
-position = Vector2(656, 352)
+timestamp = 129.2501133786848
+position = Vector2(526, 165)
 
-[sub_resource type="Resource" id="Resource_65jgk"]
+[sub_resource type="Resource" id="Resource_cmmwf"]
 script = ExtResource("2_8480h")
 timestamp = 130.00240362811792
-position = Vector2(871, 427)
+position = Vector2(651, 327)
 
-[sub_resource type="Resource" id="Resource_bsqjg"]
+[sub_resource type="Resource" id="Resource_74eie"]
 script = ExtResource("2_8480h")
-timestamp = 131.0001814058957
-position = Vector2(1092, 571)
+timestamp = 131.00015873015872
+position = Vector2(575.5, 323.5)
 
-[sub_resource type="Resource" id="Resource_5p20k"]
+[sub_resource type="Resource" id="Resource_nhgmd"]
 script = ExtResource("2_8480h")
-timestamp = 131.25142857142856
-position = Vector2(1026, 508)
+timestamp = 131.25120181405896
+position = Vector2(536, 234)
 
-[sub_resource type="Resource" id="Resource_ij1ek"]
+[sub_resource type="Resource" id="Resource_y1vde"]
+script = ExtResource("2_8480h")
+timestamp = 131.50034013605443
+position = Vector2(593, 260)
+
+[sub_resource type="Resource" id="Resource_etfoj"]
+script = ExtResource("2_8480h")
+timestamp = 131.75179138321997
+position = Vector2(741, 341)
+
+[sub_resource type="Resource" id="Resource_jv80q"]
 script = ExtResource("2_8480h")
 timestamp = 132.00185941043082
-position = Vector2(947, 459)
+position = Vector2(927, 433)
 
-[sub_resource type="Resource" id="Resource_w4q84"]
+[sub_resource type="Resource" id="Resource_fxvp2"]
 script = ExtResource("2_8480h")
 timestamp = 133.0001814058957
+position = Vector2(824, 366)
+
+[sub_resource type="Resource" id="Resource_bwffj"]
+script = ExtResource("2_8480h")
+timestamp = 133.25124716553287
+position = Vector2(997, 518)
+
+[sub_resource type="Resource" id="Resource_ccfyw"]
+script = ExtResource("2_8480h")
+timestamp = 133.50036281179138
+position = Vector2(864, 474)
+
+[sub_resource type="Resource" id="Resource_vmurq"]
+script = ExtResource("2_8480h")
+timestamp = 133.75303854875284
 position = Vector2(575.5, 323.5)
 
-[sub_resource type="Resource" id="Resource_b1mhl"]
-script = ExtResource("2_8480h")
-timestamp = 133.25145124716553
-position = Vector2(816, 414)
-
-[sub_resource type="Resource" id="Resource_48nv6"]
+[sub_resource type="Resource" id="Resource_aavb7"]
 script = ExtResource("2_8480h")
 timestamp = 134.00231292517006
-position = Vector2(679, 266)
+position = Vector2(523, 166)
 
-[sub_resource type="Resource" id="Resource_wbk7v"]
+[sub_resource type="Resource" id="Resource_8gjie"]
 script = ExtResource("2_8480h")
-timestamp = 136.00149659863945
-position = Vector2(469, 192)
+timestamp = 136.00138321995465
+position = Vector2(575.5, 323.5)
 
-[sub_resource type="Resource" id="Resource_7e1qu"]
+[sub_resource type="Resource" id="Resource_no1s1"]
 script = ExtResource("2_8480h")
-timestamp = 137.0001814058957
-position = Vector2(572, 216)
+timestamp = 137.0001133786848
+position = Vector2(575.5, 323.5)
 
-[sub_resource type="Resource" id="Resource_ifp5s"]
+[sub_resource type="Resource" id="Resource_kfh2n"]
 script = ExtResource("2_8480h")
 timestamp = 138.00185941043082
-position = Vector2(755, 340)
+position = Vector2(671, 280)
 
-[sub_resource type="Resource" id="Resource_i0cai"]
+[sub_resource type="Resource" id="Resource_1dodc"]
 script = ExtResource("2_8480h")
 timestamp = 139.00131519274376
-position = Vector2(575.5, 323.5)
+position = Vector2(513, 252)
 
-[sub_resource type="Resource" id="Resource_4n48a"]
+[sub_resource type="Resource" id="Resource_hm0us"]
+script = ExtResource("2_8480h")
+timestamp = 139.50038548752835
+position = Vector2(688, 345)
+
+[sub_resource type="Resource" id="Resource_kxv1w"]
 script = ExtResource("2_8480h")
 timestamp = 140.00185941043082
-position = Vector2(575.5, 323.5)
+position = Vector2(743, 377)
 
-[sub_resource type="Resource" id="Resource_byk5q"]
+[sub_resource type="Resource" id="Resource_81bhu"]
 script = ExtResource("2_8480h")
-timestamp = 141.0001814058957
-position = Vector2(651, 346)
+timestamp = 141.00013605442177
+position = Vector2(836, 391)
 
-[sub_resource type="Resource" id="Resource_r0iqm"]
+[sub_resource type="Resource" id="Resource_vxlep"]
 script = ExtResource("2_8480h")
 timestamp = 142.00185941043082
-position = Vector2(575.5, 323.5)
+position = Vector2(1041, 531)
 
-[sub_resource type="Resource" id="Resource_8phpl"]
+[sub_resource type="Resource" id="Resource_8v2cv"]
 script = ExtResource("2_8480h")
-timestamp = 143.00136054421768
-position = Vector2(514, 267)
+timestamp = 143.0012925170068
+position = Vector2(909, 483)
+
+[sub_resource type="Resource" id="Resource_srsan"]
+script = ExtResource("2_8480h")
+timestamp = 143.45165532879818
+position = Vector2(968, 530)
 
 [resource]
 script = ExtResource("1_nmfex")
-timing_windows = Array[ExtResource("2_8480h")]([SubResource("Resource_nmfex"), SubResource("Resource_8480h"), SubResource("Resource_hfcvd"), SubResource("Resource_tsuwv"), SubResource("Resource_fgwoi"), SubResource("Resource_27dgb"), SubResource("Resource_37611"), SubResource("Resource_frhl6"), SubResource("Resource_2nog6"), SubResource("Resource_vglo5"), SubResource("Resource_inmfy"), SubResource("Resource_16jbh"), SubResource("Resource_e6e47"), SubResource("Resource_5njub"), SubResource("Resource_jfcrh"), SubResource("Resource_qmgqc"), SubResource("Resource_qb1wm"), SubResource("Resource_6ipwb"), SubResource("Resource_kgeir"), SubResource("Resource_38jmt"), SubResource("Resource_y0kxt"), SubResource("Resource_ikbyv"), SubResource("Resource_ix7jp"), SubResource("Resource_cr0wb"), SubResource("Resource_142ra"), SubResource("Resource_tndpd"), SubResource("Resource_rf6oa"), SubResource("Resource_ycyol"), SubResource("Resource_d2tb3"), SubResource("Resource_k7s8b"), SubResource("Resource_ifrjx"), SubResource("Resource_ywpop"), SubResource("Resource_wmduk"), SubResource("Resource_k01cm"), SubResource("Resource_3wh3c"), SubResource("Resource_502bh"), SubResource("Resource_vsv78"), SubResource("Resource_k6s38"), SubResource("Resource_fhomg"), SubResource("Resource_7w6ok"), SubResource("Resource_hjaww"), SubResource("Resource_42b5l"), SubResource("Resource_hdrgk"), SubResource("Resource_18162"), SubResource("Resource_5rljv"), SubResource("Resource_cuw3g"), SubResource("Resource_nyprc"), SubResource("Resource_ex8e0"), SubResource("Resource_e5ws7"), SubResource("Resource_es161"), SubResource("Resource_j7f7h"), SubResource("Resource_vtfea"), SubResource("Resource_e70ec"), SubResource("Resource_mle4u"), SubResource("Resource_lu4kd"), SubResource("Resource_t8vnn"), SubResource("Resource_l7ir1"), SubResource("Resource_1tpda"), SubResource("Resource_mmeje"), SubResource("Resource_645n5"), SubResource("Resource_iqqp7"), SubResource("Resource_wtbcw"), SubResource("Resource_ajplp"), SubResource("Resource_r0lda"), SubResource("Resource_np0go"), SubResource("Resource_40cj6"), SubResource("Resource_pdcx0"), SubResource("Resource_soema"), SubResource("Resource_eloe7"), SubResource("Resource_tqqq2"), SubResource("Resource_l8hq3"), SubResource("Resource_rvc6e"), SubResource("Resource_vmfg1"), SubResource("Resource_6ofcr"), SubResource("Resource_vxhki"), SubResource("Resource_vgjin"), SubResource("Resource_kmbxi"), SubResource("Resource_b38xf"), SubResource("Resource_ru5o7"), SubResource("Resource_o5rps"), SubResource("Resource_gbdt8"), SubResource("Resource_fetmd"), SubResource("Resource_01uv0"), SubResource("Resource_a7l36"), SubResource("Resource_jh3jw"), SubResource("Resource_opvpq"), SubResource("Resource_x6rwq"), SubResource("Resource_hot7i"), SubResource("Resource_31psk"), SubResource("Resource_8y5h6"), SubResource("Resource_is6bi"), SubResource("Resource_enacw"), SubResource("Resource_3f2m4"), SubResource("Resource_6vvu7"), SubResource("Resource_wl2tk"), SubResource("Resource_sp6le"), SubResource("Resource_kagxi"), SubResource("Resource_l2p76"), SubResource("Resource_bjmgv"), SubResource("Resource_r63ol"), SubResource("Resource_xrcqh"), SubResource("Resource_5v2ye"), SubResource("Resource_reate"), SubResource("Resource_ilbij"), SubResource("Resource_2vwnj"), SubResource("Resource_us1v4"), SubResource("Resource_gbr85"), SubResource("Resource_oq72t"), SubResource("Resource_i7lwf"), SubResource("Resource_1aqpe"), SubResource("Resource_m04gt"), SubResource("Resource_ou650"), SubResource("Resource_l5usv"), SubResource("Resource_3lgv3"), SubResource("Resource_u4t1p"), SubResource("Resource_ltwgb"), SubResource("Resource_0txel"), SubResource("Resource_lexye"), SubResource("Resource_v87rk"), SubResource("Resource_sb76m"), SubResource("Resource_0tw6n"), SubResource("Resource_4m7us"), SubResource("Resource_3qkmk"), SubResource("Resource_xydo8"), SubResource("Resource_f0o3o"), SubResource("Resource_ixw4s"), SubResource("Resource_pml3o"), SubResource("Resource_eaxrf"), SubResource("Resource_os1vn"), SubResource("Resource_y546f"), SubResource("Resource_a6kkr"), SubResource("Resource_wrkos"), SubResource("Resource_d740f"), SubResource("Resource_dgbpw"), SubResource("Resource_scppi"), SubResource("Resource_gldu6"), SubResource("Resource_a1yvt"), SubResource("Resource_q02f3"), SubResource("Resource_vdunx"), SubResource("Resource_y7aui"), SubResource("Resource_68s85"), SubResource("Resource_3axje"), SubResource("Resource_se0x0"), SubResource("Resource_b0wqx"), SubResource("Resource_uypwb"), SubResource("Resource_5ecc5"), SubResource("Resource_wcdn8"), SubResource("Resource_wilm6"), SubResource("Resource_qy6g6"), SubResource("Resource_xjn7n"), SubResource("Resource_7cc1a"), SubResource("Resource_4ashs"), SubResource("Resource_3o58r"), SubResource("Resource_voyag"), SubResource("Resource_01eg5"), SubResource("Resource_sf2bb"), SubResource("Resource_wjjm5"), SubResource("Resource_65jgk"), SubResource("Resource_bsqjg"), SubResource("Resource_5p20k"), SubResource("Resource_ij1ek"), SubResource("Resource_w4q84"), SubResource("Resource_b1mhl"), SubResource("Resource_48nv6"), SubResource("Resource_wbk7v"), SubResource("Resource_7e1qu"), SubResource("Resource_ifp5s"), SubResource("Resource_i0cai"), SubResource("Resource_4n48a"), SubResource("Resource_byk5q"), SubResource("Resource_r0iqm"), SubResource("Resource_8phpl")])
+minimum_target_score = 3500
+score_increase_for_high_hit = 2
+score_increase_for_low_hit = 1
+timing_windows = Array[ExtResource("2_8480h")]([SubResource("Resource_nmfex"), SubResource("Resource_8480h"), SubResource("Resource_hfcvd"), SubResource("Resource_tsuwv"), SubResource("Resource_fgwoi"), SubResource("Resource_27dgb"), SubResource("Resource_37611"), SubResource("Resource_frhl6"), SubResource("Resource_2nog6"), SubResource("Resource_vglo5"), SubResource("Resource_inmfy"), SubResource("Resource_16jbh"), SubResource("Resource_e6e47"), SubResource("Resource_5njub"), SubResource("Resource_jfcrh"), SubResource("Resource_qmgqc"), SubResource("Resource_qb1wm"), SubResource("Resource_6ipwb"), SubResource("Resource_kgeir"), SubResource("Resource_38jmt"), SubResource("Resource_y0kxt"), SubResource("Resource_ikbyv"), SubResource("Resource_ix7jp"), SubResource("Resource_cr0wb"), SubResource("Resource_142ra"), SubResource("Resource_tndpd"), SubResource("Resource_rf6oa"), SubResource("Resource_ycyol"), SubResource("Resource_d2tb3"), SubResource("Resource_k7s8b"), SubResource("Resource_ifrjx"), SubResource("Resource_ywpop"), SubResource("Resource_wmduk"), SubResource("Resource_k01cm"), SubResource("Resource_3wh3c"), SubResource("Resource_502bh"), SubResource("Resource_vsv78"), SubResource("Resource_k6s38"), SubResource("Resource_fhomg"), SubResource("Resource_7w6ok"), SubResource("Resource_hjaww"), SubResource("Resource_42b5l"), SubResource("Resource_hdrgk"), SubResource("Resource_18162"), SubResource("Resource_5rljv"), SubResource("Resource_cuw3g"), SubResource("Resource_nyprc"), SubResource("Resource_ex8e0"), SubResource("Resource_e5ws7"), SubResource("Resource_es161"), SubResource("Resource_j7f7h"), SubResource("Resource_vtfea"), SubResource("Resource_e70ec"), SubResource("Resource_mle4u"), SubResource("Resource_lu4kd"), SubResource("Resource_t8vnn"), SubResource("Resource_l7ir1"), SubResource("Resource_1tpda"), SubResource("Resource_mmeje"), SubResource("Resource_645n5"), SubResource("Resource_iqqp7"), SubResource("Resource_wtbcw"), SubResource("Resource_ajplp"), SubResource("Resource_r0lda"), SubResource("Resource_np0go"), SubResource("Resource_40cj6"), SubResource("Resource_pdcx0"), SubResource("Resource_soema"), SubResource("Resource_eloe7"), SubResource("Resource_tqqq2"), SubResource("Resource_l8hq3"), SubResource("Resource_rvc6e"), SubResource("Resource_vmfg1"), SubResource("Resource_6ofcr"), SubResource("Resource_vxhki"), SubResource("Resource_vgjin"), SubResource("Resource_kmbxi"), SubResource("Resource_b38xf"), SubResource("Resource_ru5o7"), SubResource("Resource_o5rps"), SubResource("Resource_gbdt8"), SubResource("Resource_fetmd"), SubResource("Resource_01uv0"), SubResource("Resource_a7l36"), SubResource("Resource_jh3jw"), SubResource("Resource_opvpq"), SubResource("Resource_x6rwq"), SubResource("Resource_hot7i"), SubResource("Resource_31psk"), SubResource("Resource_8y5h6"), SubResource("Resource_is6bi"), SubResource("Resource_enacw"), SubResource("Resource_3f2m4"), SubResource("Resource_6vvu7"), SubResource("Resource_wl2tk"), SubResource("Resource_sp6le"), SubResource("Resource_kagxi"), SubResource("Resource_l2p76"), SubResource("Resource_bjmgv"), SubResource("Resource_r63ol"), SubResource("Resource_xrcqh"), SubResource("Resource_5v2ye"), SubResource("Resource_reate"), SubResource("Resource_ilbij"), SubResource("Resource_2vwnj"), SubResource("Resource_us1v4"), SubResource("Resource_gbr85"), SubResource("Resource_oq72t"), SubResource("Resource_i7lwf"), SubResource("Resource_1aqpe"), SubResource("Resource_m04gt"), SubResource("Resource_ou650"), SubResource("Resource_l5usv"), SubResource("Resource_3lgv3"), SubResource("Resource_u4t1p"), SubResource("Resource_ltwgb"), SubResource("Resource_0txel"), SubResource("Resource_lexye"), SubResource("Resource_v87rk"), SubResource("Resource_sb76m"), SubResource("Resource_0tw6n"), SubResource("Resource_4m7us"), SubResource("Resource_3qkmk"), SubResource("Resource_xydo8"), SubResource("Resource_f0o3o"), SubResource("Resource_ixw4s"), SubResource("Resource_pml3o"), SubResource("Resource_eaxrf"), SubResource("Resource_os1vn"), SubResource("Resource_y546f"), SubResource("Resource_a6kkr"), SubResource("Resource_wrkos"), SubResource("Resource_d740f"), SubResource("Resource_dgbpw"), SubResource("Resource_scppi"), SubResource("Resource_gldu6"), SubResource("Resource_a1yvt"), SubResource("Resource_q02f3"), SubResource("Resource_vdunx"), SubResource("Resource_y7aui"), SubResource("Resource_68s85"), SubResource("Resource_3axje"), SubResource("Resource_se0x0"), SubResource("Resource_b0wqx"), SubResource("Resource_uypwb"), SubResource("Resource_5ecc5"), SubResource("Resource_wcdn8"), SubResource("Resource_wilm6"), SubResource("Resource_qy6g6"), SubResource("Resource_xjn7n"), SubResource("Resource_7cc1a"), SubResource("Resource_4ashs"), SubResource("Resource_3o58r"), SubResource("Resource_voyag"), SubResource("Resource_01eg5"), SubResource("Resource_sf2bb"), SubResource("Resource_wjjm5"), SubResource("Resource_65jgk"), SubResource("Resource_bsqjg"), SubResource("Resource_5p20k"), SubResource("Resource_ij1ek"), SubResource("Resource_w4q84"), SubResource("Resource_b1mhl"), SubResource("Resource_48nv6"), SubResource("Resource_wbk7v"), SubResource("Resource_7e1qu"), SubResource("Resource_ifp5s"), SubResource("Resource_i0cai"), SubResource("Resource_4n48a"), SubResource("Resource_byk5q"), SubResource("Resource_r0iqm"), SubResource("Resource_8phpl"), SubResource("Resource_p30jj"), SubResource("Resource_7cqk8"), SubResource("Resource_rbygh"), SubResource("Resource_sfjs2"), SubResource("Resource_bb0u5"), SubResource("Resource_o3vgm"), SubResource("Resource_irouo"), SubResource("Resource_0j3v6"), SubResource("Resource_v56b3"), SubResource("Resource_nppe6"), SubResource("Resource_gxeub"), SubResource("Resource_y81u6"), SubResource("Resource_lvijc"), SubResource("Resource_sh67e"), SubResource("Resource_i6rjx"), SubResource("Resource_tnoih"), SubResource("Resource_d735t"), SubResource("Resource_y2qro"), SubResource("Resource_hcnhg"), SubResource("Resource_uuax6"), SubResource("Resource_bpvde"), SubResource("Resource_kty5l"), SubResource("Resource_vw40q"), SubResource("Resource_veyaf"), SubResource("Resource_hldy4"), SubResource("Resource_tujqc"), SubResource("Resource_yorjc"), SubResource("Resource_ys1aj"), SubResource("Resource_1kfwy"), SubResource("Resource_wr8lp"), SubResource("Resource_cmmwf"), SubResource("Resource_74eie"), SubResource("Resource_nhgmd"), SubResource("Resource_y1vde"), SubResource("Resource_etfoj"), SubResource("Resource_jv80q"), SubResource("Resource_fxvp2"), SubResource("Resource_bwffj"), SubResource("Resource_ccfyw"), SubResource("Resource_vmurq"), SubResource("Resource_aavb7"), SubResource("Resource_8gjie"), SubResource("Resource_no1s1"), SubResource("Resource_kfh2n"), SubResource("Resource_1dodc"), SubResource("Resource_hm0us"), SubResource("Resource_kxv1w"), SubResource("Resource_81bhu"), SubResource("Resource_vxlep"), SubResource("Resource_8v2cv"), SubResource("Resource_srsan")])

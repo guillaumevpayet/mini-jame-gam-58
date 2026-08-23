@@ -20,6 +20,3 @@ texture = ExtResource("3_t880s")
 
 [node name="IndicatorRing" type="Sprite2D" parent="." unique_id=51065781]
 texture = ExtResource("3_t880s")
-
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
