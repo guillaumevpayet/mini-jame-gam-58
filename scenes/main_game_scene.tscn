@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://7yhetykehgr5" path="res://scripts/main_game_scene.gd" id="1_ilxj7"]
 [ext_resource type="Resource" uid="uid://bbapx2q1gpjtj" path="res://resources/songs/song_1/rhythm_song.tres" id="2_i4o3e"]
-[ext_resource type="PackedScene" uid="uid://nskf2kc52kf" path="res://scenes/beat_marker.tscn" id="3_4a4v8"]
 [ext_resource type="Texture2D" uid="uid://g634qog2nadv" path="res://assets/Anvil surface.png" id="5_4a4v8"]
 [ext_resource type="Texture2D" uid="uid://ck0dnelt8qjhm" path="res://assets/shortsword sprite.png" id="5_i4o3e"]
 [ext_resource type="AudioStream" uid="uid://bxqsfrod5jouy" path="res://resources/songs/song_1/bs_1_no_perc.ogg" id="7_cofsh"]
@@ -14,7 +13,6 @@
 [node name="MainGameScene" type="Node" unique_id=1706344213]
 script = ExtResource("1_ilxj7")
 song = ExtResource("2_i4o3e")
-beat_marker = ExtResource("3_4a4v8")
 time_before_beat = 0.06
 beat_lifetime = 1.0
 miss_tolerance = 5
@@ -30,11 +28,13 @@ rotation = 0.56463325
 scale = Vector2(5.8836517, 5.8836517)
 texture = ExtResource("5_i4o3e")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1679130757]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=1539557000]
 stream = ExtResource("7_cofsh")
+bus = &"Music"
 
-[node name="PercussionsAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=789726541]
+[node name="PercussionsAudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=1614987196]
 stream = ExtResource("8_u2xxy")
+bus = &"Music"
 
 [node name="Furnace" parent="." unique_id=248506035 instance=ExtResource("8_i4o3e")]
 position = Vector2(100, 242)

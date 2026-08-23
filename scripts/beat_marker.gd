@@ -6,12 +6,11 @@ class_name BeatMarker
 @export var tolerances: Array[float]
 @export var indicator_ring_max_scale: float = 3
 @export var max_radius: float = 30
-@export var sound_effect_scene: PackedScene
 
+var sound_effect_scene: PackedScene = preload("uid://bh6sekirxqtfo")
 
 @onready var _target_ring: Sprite2D = $TargetRing
 @onready var _indicator_ring: Sprite2D = $IndicatorRing
-
 
 var _original_time_to_beat: float
 var _remaining_time_to_beat: float

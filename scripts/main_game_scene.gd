@@ -3,7 +3,6 @@ class_name MainGameScene
 
 
 @export var song: RhythmSong
-@export var beat_marker: PackedScene
 
 ## Time to spawn the beat marker before the beat, in seconds.
 @export var time_before_beat: float
@@ -11,18 +10,20 @@ class_name MainGameScene
 @export var miss_tolerance: int = 3
 @export var max_combo: int = 12
 
-
 signal score_changed(score: int, minimum_target_score: int)
 signal combo_changed()
 signal game_over(perfect_count: int, ok_count: int, miss_count: int, win: bool)
+const BEAT_INTERACTION_EFFECT = preload("uid://bh6sekirxqtfo")
 
 @onready var countdown_label: Label = $CoundownDisplay/Label
 @onready var countdown_interval: Timer = $CountdownInterval
 
-@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
-@onready var percussions_audio_stream_player_2d: AudioStreamPlayer2D = $PercussionsAudioStreamPlayer2D
+@onready var audio_stream_player_2d: AudioStreamPlayer = $AudioStreamPlayer2D
+@onready var percussions_audio_stream_player_2d: AudioStreamPlayer = $PercussionsAudioStreamPlayer2D
 @onready var coundown_display: Control = $CoundownDisplay
 @onready var allow_playback_sync: Timer = $AllowPlaybackSync
+
+var beat_marker: PackedScene = preload("uid://nskf2kc52kf")
 
 var _countdown: int = 3
 var _next_timing_window_index: int
@@ -45,8 +46,6 @@ func _ready() -> void:
 	_song_timings.sort_custom(func(a: RhythmTimingWindow, b: RhythmTimingWindow): return a.timestamp < b.timestamp)
 	get_viewport().physics_object_picking_sort = true      # order by z_index / tree order
 	get_viewport().physics_object_picking_first_only = true # only the "top" one gets the event
-	audio_stream_player_2d.seek(0.0)
-	percussions_audio_stream_player_2d.seek(0.0)
 
 func _process(delta: float) -> void:
 	if _countdown > 0:
@@ -88,11 +87,14 @@ func handle_song_timing(delta: float) -> void:
 	if abs(_game_clock - playback_position) > _sync_threshold && _allow_playback_sync:
 		_game_clock = playback_position
 
-	var timing_window: RhythmTimingWindow = _song_timings[_next_timing_window_index]
-	
-	if _game_clock > timing_window.timestamp - time_before_beat:
-		_create_beat_marker(timing_window.position)
-		_next_timing_window_index += 1
+	while _next_timing_window_index < _song_timings.size():
+		var timing_window: RhythmTimingWindow = _song_timings[_next_timing_window_index]
+		
+		if _game_clock > timing_window.timestamp - time_before_beat:
+			_create_beat_marker(timing_window.position)
+			_next_timing_window_index += 1
+		else:
+			break
 
 func _create_beat_marker(marker_position: Vector2):
 	var marker: BeatMarker = beat_marker.instantiate()
@@ -142,13 +144,35 @@ func _on_countdown_interval_timeout() -> void:
 	_countdown -= 1
 	
 	countdown_label.text = str(_countdown)
+	# warmup main
+	if _countdown == 2:
+		
+		var inst = BEAT_INTERACTION_EFFECT.instantiate()
+		add_child(inst)
+		inst.play_warmup()
+		audio_stream_player_2d.volume_db = -80.0
+		audio_stream_player_2d.play()
 	
-	if _countdown <= 0: 
+	# warmup perc:
+	elif _countdown == 1:
+	
+		percussions_audio_stream_player_2d.volume_db = -80.0
+		percussions_audio_stream_player_2d.play()
+		
+	elif _countdown <= 0: 
+		audio_stream_player_2d.stop()
+		percussions_audio_stream_player_2d.stop()
+		
+		percussions_audio_stream_player_2d.volume_db = 0
+		audio_stream_player_2d.volume_db = 0
+		
 		allow_playback_sync.start()
-		_countdown = 0
 		countdown_interval.stop()
+		
 		coundown_display.hide()
 		
+		audio_stream_player_2d.seek(0.0)
+		percussions_audio_stream_player_2d.seek(0.0)
 		audio_stream_player_2d.play()
 		percussions_audio_stream_player_2d.play()
 
