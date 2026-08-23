@@ -12,9 +12,8 @@
 [ext_resource type="Material" uid="uid://bgy5uihxqa77f" path="res://materials/hit_particle_process_material.tres" id="10_f1jfv"]
 
 [node name="InteractionEffect" type="AudioStreamPlayer2D" unique_id=1268917297]
-volume_db = -10.0
+volume_db = -25.0
 autoplay = true
-bus = &"SFX"
 script = ExtResource("1_8qs88")
 perfect_hit_sounds = Array[AudioStream]([ExtResource("2_my21r"), ExtResource("3_65aqc")])
 ok_hit_sounds = Array[AudioStream]([ExtResource("4_8gas7"), ExtResource("5_iklh4")])
