@@ -25,12 +25,13 @@ texture = ExtResource("1_s4lrb")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1059980644]
 layout_mode = 0
-offset_left = 158.04
-offset_top = 21.795
-offset_right = 398.04007
-offset_bottom = 101.795
+offset_left = 200.0
+offset_top = 59.285
+offset_right = 440.0
+offset_bottom = 139.285
 scale = Vector2(4, 4)
 texture = ExtResource("2_mgrm8")
+stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=43649231]
 layout_mode = 1

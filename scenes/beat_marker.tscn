@@ -8,7 +8,7 @@
 
 [node name="BeatMarker" type="Area2D" unique_id=372079869]
 script = ExtResource("1_pom5a")
-tolerances = Array[float]([0.2, 0.4, 0.6])
+tolerances = Array[float]([0.3, 0.6, 1.0])
 sound_effect_scene = ExtResource("2_t880s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1294068821]
@@ -20,3 +20,6 @@ texture = ExtResource("3_t880s")
 
 [node name="IndicatorRing" type="Sprite2D" parent="." unique_id=51065781]
 texture = ExtResource("3_t880s")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

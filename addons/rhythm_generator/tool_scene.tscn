@@ -15,4 +15,4 @@ script = ExtResource("1_g17q7")
 wav_stream = ExtResource("2_pblq6")
 output_directory = "res://resources/songs/song_1"
 mask_texture = ExtResource("3_pblq6")
-min_proximity = 100.0
+max_distance = 100.0

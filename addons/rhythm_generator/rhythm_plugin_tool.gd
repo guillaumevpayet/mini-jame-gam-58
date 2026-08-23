@@ -16,6 +16,7 @@ class_name RhythmPluginTool
 @export_category("Hit Marker Positioning")
 @export var mask_texture: Texture2D
 @export var min_proximity: float = 50.0
+@export var max_distance: float = 200.0
 
 @export_tool_button("Generate Rhythm Resource", "Callable") var generation_action = _on_generate_pressed
 
@@ -70,7 +71,8 @@ func _generate_resource() -> void:
 		if amplitude > threshold:
 			var current_time = float(i) / (sample_rate * bytes_per_sample * channels)
 			if current_time - last_hit_time > hit_cooldown:
-				_add_hit(current_song, current_time)
+				var delta_time = current_time - last_hit_time if last_hit_time != -1.0 else -1.0
+				_add_hit(current_song, current_time, delta_time)
 				last_hit_time = current_time
 	
 	print("Max amplitude: ", max_found)
@@ -90,7 +92,7 @@ func _save_resource(song: RhythmSong) -> void:
 	else:
 		print("RhythmSong saved to " + full_path)
 
-func calculate_window_position(window: RhythmTimingWindow):
+func calculate_window_position(window: RhythmTimingWindow, delta_time: float):
 	if not mask_texture:
 		var viewport_size = Vector2(get_viewport().size)
 		window.position = viewport_size / 2.0
@@ -98,36 +100,69 @@ func calculate_window_position(window: RhythmTimingWindow):
 
 	var image = mask_texture.get_image()
 	
+	var _min_prox = float(min_proximity) if min_proximity != null else 50.0
+	var _max_dist = float(max_distance) if max_distance != null else 200.0
+	
+	# Determine target distance
+	var lerp_factor = clamp(delta_time / 2.0, 0.0, 1.0)
+	var target_distance = lerp(_min_prox, _max_dist, lerp_factor)
+	if delta_time < 0:
+		target_distance = _min_prox
+
+	var last_pos = marker_history.back() if marker_history.size() > 0 else null
+	
 	var valid_pos = false
 	var new_position = Vector2.ZERO
 	var attempts = 0
 	
-	while not valid_pos and attempts < 100:
+	# Weighted sampling
+	while not valid_pos and attempts < 500:
 		attempts += 1
 		var x = randi_range(0, image.get_width() - 1)
 		var y = randi_range(0, image.get_height() - 1)
 		
-		# Assuming white (r > 0.5) is the valid area
 		if image.get_pixel(x, y).r > 0.5:
-			# Direct 1:1 mapping of pixel coordinate to screen position
-			new_position = Vector2(x, y)
+			var candidate_pos = Vector2(x, y)
 			
+			# Proximity check against history
 			var too_close = false
 			for prev_pos in marker_history:
-				if new_position.distance_to(prev_pos) < min_proximity:
+				if candidate_pos.distance_to(prev_pos) < target_distance:
 					too_close = true
 					break
 			
-			if not too_close:
-				valid_pos = true
+			if too_close:
+				continue
+				
+			# Distance weighting: if we have a last position, bias towards it
+			if last_pos != null:
+				var dist = candidate_pos.distance_to(last_pos)
+				
+				# Absolute hard limit on jump distance to prevent snapping to other side of the screen
+				var max_jump_distance = 300.0 # Pixel units
+				if dist > max_jump_distance:
+					continue
+					
+				# Accept with probability decreasing as distance increases
+				var max_sample_dist = 400.0 # Define a reasonable range
+				var probability = clamp(1.0 - (dist / max_sample_dist), 0.1, 1.0)
+				if randf() > probability:
+					continue
+			
+			new_position = candidate_pos
+			valid_pos = true
+	
+	# Fallback if no weighted position found
+	if not valid_pos:
+		new_position = Vector2(image.get_width() / 2.0, image.get_height() / 2.0)
 	
 	window.position = new_position
 	marker_history.append(new_position)
-	if marker_history.size() > 3:
+	if marker_history.size() > 10:
 		marker_history.pop_front()
 
-func _add_hit(song: RhythmSong, timestamp: float) -> void:
+func _add_hit(song: RhythmSong, timestamp: float, delta_time: float) -> void:
 	var window = RhythmTimingWindow.new()
 	window.timestamp = timestamp - timestamp_offset
-	calculate_window_position(window)
+	calculate_window_position(window, delta_time)
 	song.timing_windows.append(window)

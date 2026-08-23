@@ -7,6 +7,7 @@ class_name MainGameScene
 
 ## Time to spawn the beat marker before the beat, in seconds.
 @export var time_before_beat: float
+@export var beat_lifetime: float
 @export var miss_tolerance: int = 3
 @export var max_combo: int = 12
 
@@ -27,6 +28,7 @@ var _song_timings: Array[RhythmTimingWindow]
 var _perfect_count: int = 0
 var _ok_count: int = 0
 var _miss_count: int = 0
+var _active_beat_markers: Array[BeatMarker]
 
 func _ready() -> void:
 	score_changed.emit(_score, song.minimum_target_score)
@@ -51,11 +53,34 @@ func _process(_delta: float) -> void:
 
 func _create_beat_marker(marker_position: Vector2):
 	var marker: BeatMarker = beat_marker.instantiate()
-	marker.init(marker_position, time_before_beat)
+	marker.init(marker_position, beat_lifetime)
 	marker.score_obtained.connect(_on_BeatMarker_score_obtained)
+	marker.despawn.connect(_on_marker_despawn)
 	$BeatMarkersContainer.add_child(marker)
 	$BeatMarkersContainer.move_child(marker, 0)
+	_active_beat_markers.append(marker)
 
+func _on_marker_despawn(marker: BeatMarker) -> void:
+	_active_beat_markers.erase(marker)
+	marker.queue_free()
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if event is not InputEventMouseButton or not event.pressed:
+		return
+		
+	var has_hit: bool = false
+	for marker in _active_beat_markers:
+		if !marker._has_mouse_active:
+			continue
+		
+		has_hit = true
+		marker.determine_click_score(event)
+		break
+		
+	# this is hacky and I'd rather a proper separation for score counting 
+	# but I only have a few hours left
+	if !has_hit:
+		_active_beat_markers[0]._emit_score_and_disappear(0)
 
 func _on_BeatMarker_score_obtained(score: int):
 	match score:
