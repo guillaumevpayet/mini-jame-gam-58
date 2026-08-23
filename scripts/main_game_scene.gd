@@ -29,10 +29,11 @@ func _ready() -> void:
 	combo_changed.emit(_combo)
 	_song_timings = song.timing_windows
 	_song_timings.sort_custom(func(a: RhythmTimingWindow, b: RhythmTimingWindow): return a.timestamp < b.timestamp)
+	get_viewport().physics_object_picking_sort = true      # order by z_index / tree order
+	get_viewport().physics_object_picking_first_only = true # only the "top" one gets the event
 
 func _process(_delta: float) -> void:
 	var playback_position: float = _audio_stream_player.get_playback_position()
-	var half_delta: float = 0.5 * _delta
 
 	if _next_timing_window_index >= _song_timings.size():
 		return
@@ -48,7 +49,8 @@ func _create_beat_marker(marker_position: Vector2):
 	var marker: BeatMarker = beat_marker.instantiate()
 	marker.init(marker_position, time_before_beat)
 	marker.score_obtained.connect(_on_BeatMarker_score_obtained)
-	add_child(marker)
+	$BeatMarkersContainer.add_child(marker)
+	$BeatMarkersContainer.move_child(marker, 0)
 
 
 func _on_BeatMarker_score_obtained(score: int):
@@ -57,11 +59,11 @@ func _on_BeatMarker_score_obtained(score: int):
 			_miss_streak += 1
 			_combo = 0
 		1:
-			_score += song.score_increase_for_low_hit
+			_score += song.score_increase_for_low_hit * (1 + _combo)
 			_miss_streak = 0
 			_combo += 1
 		2:
-			_score += song.score_increase_for_high_hit
+			_score += song.score_increase_for_high_hit * (1 + _combo)
 			_miss_streak = 0
 			_combo += 1
 		

@@ -6,6 +6,7 @@ class_name BeatMarker
 @export var tolerances: Array[float]
 @export var indicator_ring_max_scale: float = 3
 @export var max_radius: float = 30
+@export var sound_effect_scene: PackedScene
 
 
 @onready var _target_ring: Sprite2D = $TargetRing
@@ -33,8 +34,7 @@ func _process(_delta: float) -> void:
 	_remaining_time_to_beat -= _delta
 
 	if _remaining_time_to_beat <= -_original_time_to_beat:
-		score_obtained.emit(0)
-		queue_free()
+		_emit_score_and_disappear(0)
 		return
 	
 	var opacity: float = 1 - (abs(_remaining_time_to_beat) / _original_time_to_beat)
@@ -51,15 +51,32 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 		return
 	
 	var radius: float = event.position.distance_to(position)
+	var score: int
 	
 	if radius > max_radius:
-		score_obtained.emit(0)
+		score = 0
 	else:
 		var tolerance_count: int = tolerances.size()
 		
-		for score in range(tolerance_count):
-			if abs(_remaining_time_to_beat) <= tolerances[score]:
-				score_obtained.emit(tolerance_count - score - 1)
+		for index in range(tolerance_count):
+			if abs(_remaining_time_to_beat) <= tolerances[index]:
+				score = tolerance_count - index - 1
 				break
+
+	_emit_score_and_disappear(score)
+
+func _emit_score_and_disappear(score: int):
+	score_obtained.emit(score)
+	var sound_effect: SoundEffect = sound_effect_scene.instantiate()
+	sound_effect.position = position
+	get_parent().add_child(sound_effect)
 	
+	match score:
+		0:
+			sound_effect.play_miss()
+		1:
+			sound_effect.play_ok_hit()
+		2:
+			sound_effect.play_perfect_hit()
+
 	queue_free()

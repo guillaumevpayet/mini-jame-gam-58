@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://br5r21fuvbhp0"]
+
+[ext_resource type="Shader" uid="uid://be1yl3f0i0331" path="res://resources/heatwave_shader.gdshader" id="1_qayrm"]
+
+[resource]
+shader = ExtResource("1_qayrm")
+shader_parameter/heat_level = 0
+shader_parameter/time = 0.0

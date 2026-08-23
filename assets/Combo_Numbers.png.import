@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dygmkk7p0f731"
-path="res://.godot/imported/Basic_Cursor.png-bf52b6fdaa2968a2f6d01bea2cf61bf7.ctex"
+uid="uid://egqwk8q0yng8"
+path="res://.godot/imported/Combo_Numbers.png-a0aeb54b32025390bcc0726c60732a16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Basic_Cursor.png"
-dest_files=["res://.godot/imported/Basic_Cursor.png-bf52b6fdaa2968a2f6d01bea2cf61bf7.ctex"]
+source_file="res://assets/Combo_Numbers.png"
+dest_files=["res://.godot/imported/Combo_Numbers.png-a0aeb54b32025390bcc0726c60732a16.ctex"]
 
 [params]
 
