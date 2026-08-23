@@ -68,6 +68,8 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 func _emit_score_and_disappear(score: int):
 	score_obtained.emit(score)
 	var sound_effect: SoundEffect = sound_effect_scene.instantiate()
+	sound_effect.position = position
+	get_parent().add_child(sound_effect)
 	
 	match score:
 		0:
@@ -77,5 +79,4 @@ func _emit_score_and_disappear(score: int):
 		2:
 			sound_effect.play_perfect_hit()
 
-	get_parent().add_child(sound_effect)
 	queue_free()
