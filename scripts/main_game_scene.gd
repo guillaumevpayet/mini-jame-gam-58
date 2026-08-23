@@ -56,11 +56,11 @@ func _on_BeatMarker_score_obtained(score: int):
 			_miss_streak += 1
 			_combo = 0
 		1:
-			_score += song.score_increase_for_low_hit
+			_score += song.score_increase_for_low_hit * (1 + _combo)
 			_miss_streak = 0
 			_combo += 1
 		2:
-			_score += song.score_increase_for_high_hit
+			_score += song.score_increase_for_high_hit * (1 + _combo)
 			_miss_streak = 0
 			_combo += 1
 		

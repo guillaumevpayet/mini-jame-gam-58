@@ -9,6 +9,7 @@
 [ext_resource type="SpriteFrames" uid="uid://3s8i7vi63mrx" path="res://resources/combo_frames.tres" id="8_ef5fi"]
 [ext_resource type="AudioStream" uid="uid://cbwqcwlk2hsw0" path="res://resources/songs/song_1/bs_1_perc_only.ogg" id="8_u2xxy"]
 [ext_resource type="Script" uid="uid://don0g2v2togm4" path="res://scripts/score_label.gd" id="9_ef5fi"]
+[ext_resource type="Script" uid="uid://cvdihqrj138eb" path="res://scripts/shakeable_camera_2d.gd" id="10_i4o3e"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_cofsh"]
 stream_count = 2
@@ -59,6 +60,11 @@ text = "Score: 0"
 horizontal_alignment = 2
 script = ExtResource("9_ef5fi")
 
+[node name="ShakeableCamera2D" type="Camera2D" parent="." unique_id=441287748]
+offset = Vector2(576, 324)
+script = ExtResource("10_i4o3e")
+
 [connection signal="combo_changed" from="." to="Furnace" method="_on_main_game_scene_combo_changed"]
 [connection signal="score_changed" from="." to="MarginContainer/ScoreLabel" method="_on_main_game_scene_score_changed"]
+[connection signal="score_changed" from="." to="ShakeableCamera2D" method="_on_main_game_scene_score_changed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_2d_finished"]
