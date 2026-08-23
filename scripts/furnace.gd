@@ -65,4 +65,4 @@ func combo_tweens(current_combo: int)-> void:
 			furnace.scale = furnace.scale.lerp(base_scale, weight),
 			0.0, 1.0, 0.3)
 	
-	rotation_tween = create_tween()
+	#rotation_tween = create_tween()
