@@ -1,0 +1,183 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cmevrg63q3fw3"]
+
+[ext_resource type="Texture2D" uid="uid://egqwk8q0yng8" path="res://assets/Combo_Numbers.png" id="1_vuoel"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jeq87"]
+atlas = ExtResource("1_vuoel")
+region = Rect2(7, 101, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neb2a"]
+atlas = ExtResource("1_vuoel")
+region = Rect2(7, 101, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lubu6"]
+atlas = ExtResource("1_vuoel")
+region = Rect2(135, 101, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_appub"]
+atlas = ExtResource("1_vuoel")
+region = Rect2(167, 101, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_is0be"]
+atlas = ExtResource("1_vuoel")
+region = Rect2(135, 101, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsaoh"]
+atlas = ExtResource("1_vuoel")
+region = Rect2(167, 101, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuoel"]
+atlas = ExtResource("1_vuoel")
+region = Rect2(167, 101, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58dcx"]
+atlas = ExtResource("1_vuoel")
+region = Rect2(199, 101, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vg2xo"]
+atlas = ExtResource("1_vuoel")
+region = Rect2(39, 101, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md6ph"]
+atlas = ExtResource("1_vuoel")
+region = Rect2(39, 101, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dc7fx"]
+atlas = ExtResource("1_vuoel")
+region = Rect2(71, 101, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kwo4"]
+atlas = ExtResource("1_vuoel")
+region = Rect2(71, 101, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojxwf"]
+atlas = ExtResource("1_vuoel")
+region = Rect2(103, 101, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n32ov"]
+atlas = ExtResource("1_vuoel")
+region = Rect2(103, 101, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjk7m"]
+atlas = ExtResource("1_vuoel")
+region = Rect2(135, 101, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmfkn"]
+atlas = ExtResource("1_vuoel")
+region = Rect2(135, 101, 19, 18)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jeq87")
+}],
+"loop": 1,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neb2a")
+}],
+"loop": 1,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lubu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_appub")
+}],
+"loop": 1,
+"name": &"10",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_is0be")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsaoh")
+}],
+"loop": 1,
+"name": &"11",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuoel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58dcx")
+}],
+"loop": 1,
+"name": &"12",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vg2xo")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md6ph")
+}],
+"loop": 1,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dc7fx")
+}],
+"loop": 1,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kwo4")
+}],
+"loop": 1,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojxwf")
+}],
+"loop": 1,
+"name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n32ov")
+}],
+"loop": 1,
+"name": &"7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjk7m")
+}],
+"loop": 1,
+"name": &"8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmfkn")
+}],
+"loop": 1,
+"name": &"9",
+"speed": 5.0
+}]

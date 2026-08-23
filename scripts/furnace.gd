@@ -2,6 +2,8 @@ extends AnimatedSprite2D
 
 
 @onready var _audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var _x: AnimatedSprite2D = $XAnimatedSprite2D
+@onready var _number: AnimatedSprite2D = $NumberAnimatedSprite2D
 
 
 var _combo: int = 0
@@ -24,5 +26,7 @@ func _on_main_game_scene_combo_changed(combo: int) -> void:
 		
 		if _combo == 0:
 			_audio_stream_player.play()
-	
+
+	_x.play(str(combo))
+	_number.play(str(combo))
 	_combo = combo

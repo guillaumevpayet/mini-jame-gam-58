@@ -3,6 +3,8 @@
 [ext_resource type="SpriteFrames" uid="uid://3s8i7vi63mrx" path="res://resources/combo_frames.tres" id="1_61l8k"]
 [ext_resource type="Script" uid="uid://cs83qpg1tds71" path="res://scripts/furnace.gd" id="2_0uoyi"]
 [ext_resource type="AudioStream" uid="uid://bfpf3fcv52kiq" path="res://assets/sfx/FIRE_Hot_Furnice_Smooth_loop_mono.wav" id="3_0uoyi"]
+[ext_resource type="SpriteFrames" uid="uid://cmevrg63q3fw3" path="res://resources/x_sprite_frames.tres" id="4_s82ge"]
+[ext_resource type="SpriteFrames" uid="uid://dnewe3aacda1c" path="res://resources/metallic_numbers_sprite_frames.tres" id="5_5cqhb"]
 
 [node name="Furnace" type="AnimatedSprite2D" unique_id=248506035]
 scale = Vector2(4.0657477, 4.0657477)
@@ -11,5 +13,17 @@ script = ExtResource("2_0uoyi")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1807214067]
 stream = ExtResource("3_0uoyi")
+
+[node name="XAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1023377379]
+position = Vector2(-9, 79)
+scale = Vector2(0.6, 0.6)
+sprite_frames = ExtResource("4_s82ge")
+animation = &"0"
+
+[node name="NumberAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1414890643]
+position = Vector2(6, 78)
+scale = Vector2(0.4, 0.4)
+sprite_frames = ExtResource("5_5cqhb")
+animation = &"0"
 
 [connection signal="frame_changed" from="." to="." method="_on_frame_changed"]

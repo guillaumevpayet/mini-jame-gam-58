@@ -55,7 +55,7 @@ position = Vector2(449.1969, 272.40253)
 
 [resource]
 script = ExtResource("1_f0a88")
-minimum_target_score = 15
-score_increase_for_high_hit = 2
+minimum_target_score = 120
+score_increase_for_high_hit = 3
 score_increase_for_low_hit = 1
 timing_windows = Array[ExtResource("2_eg5lw")]([SubResource("Resource_f0a88"), SubResource("Resource_eg5lw"), SubResource("Resource_02m4l"), SubResource("Resource_ha84k"), SubResource("Resource_41wyy"), SubResource("Resource_n5bh3"), SubResource("Resource_eguxh"), SubResource("Resource_awtjf"), SubResource("Resource_iv68e"), SubResource("Resource_xo0sf")])
