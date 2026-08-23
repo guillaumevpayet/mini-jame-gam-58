@@ -31,12 +31,10 @@ texture = ExtResource("5_i4o3e")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1679130757]
 stream = ExtResource("7_cofsh")
 autoplay = true
-bus = &"Music"
 
 [node name="PercussionsAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=789726541]
 stream = ExtResource("8_u2xxy")
 autoplay = true
-bus = &"Music"
 
 [node name="Furnace" parent="." unique_id=248506035 instance=ExtResource("8_i4o3e")]
 position = Vector2(100, 292)

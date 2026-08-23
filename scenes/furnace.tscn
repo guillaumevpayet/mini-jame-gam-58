@@ -15,7 +15,6 @@ script = ExtResource("2_0uoyi")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1807214067]
 stream = ExtResource("3_0uoyi")
-bus = &"SFX"
 
 [node name="XAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1023377379]
 material = ExtResource("1_5cqhb")
