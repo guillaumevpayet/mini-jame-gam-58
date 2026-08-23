@@ -14,8 +14,9 @@ config/name="Smithing Beats"
 config/version="0.1"
 run/main_scene="uid://cwdsbytvi8rys"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/stretch_mode=0
 boot_splash/image="uid://bmladut4qlgbm"
-config/icon="res://icon.svg"
+config/icon="uid://6qr58whumxfh"
 
 [audio]
 
