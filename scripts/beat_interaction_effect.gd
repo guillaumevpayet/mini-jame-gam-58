@@ -1,5 +1,5 @@
 extends AudioStreamPlayer2D
-class_name SoundEffect
+class_name BeatInteractionEffect
 
 
 @export var perfect_hit_sounds: Array[AudioStream]

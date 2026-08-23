@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://baaqi13drdl62"]
+
+[ext_resource type="Theme" uid="uid://bv5pyfb4sv77p" path="res://resources/theme.tres" id="1_cr101"]
+[ext_resource type="Script" uid="uid://bvjgxai5ye3jf" path="res://scripts/settings_menu.gd" id="2_wswnh"]
+[ext_resource type="Texture2D" uid="uid://ctuqkqphndxg3" path="res://assets/stone smithing room test.png" id="3_wswnh"]
+
+[node name="SettingsMenu" type="Control" unique_id=1375485527]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cr101")
+script = ExtResource("2_wswnh")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1307346534]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wswnh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=912917137]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = 25.0
+offset_right = -49.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="BrightnessContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=401880490]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/BrightnessContainer" unique_id=1225617170]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Brightness"
+horizontal_alignment = 2
+
+[node name="Spacer" type="Control" parent="VBoxContainer/BrightnessContainer" unique_id=600236736]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="BrightnessSlider" type="HSlider" parent="VBoxContainer/BrightnessContainer" unique_id=943588635]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+min_value = 0.5
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="MusicContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1904363699]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/MusicContainer" unique_id=1204053557]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music volume"
+horizontal_alignment = 2
+
+[node name="Spacer" type="Control" parent="VBoxContainer/MusicContainer" unique_id=1896702006]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer/MusicContainer" unique_id=830039741]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+max_value = 1.0
+step = 0.1
+
+[node name="SFXContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=630449807]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/SFXContainer" unique_id=884162562]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SFX volume"
+horizontal_alignment = 2
+
+[node name="Spacer" type="Control" parent="VBoxContainer/SFXContainer" unique_id=1701939974]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="SFXSlider" type="HSlider" parent="VBoxContainer/SFXContainer" unique_id=1128905237]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+max_value = 1.0
+step = 0.1
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=348872598]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Return to title screen"
+
+[connection signal="drag_ended" from="VBoxContainer/BrightnessContainer/BrightnessSlider" to="." method="_on_brightness_slider_drag_ended"]
+[connection signal="value_changed" from="VBoxContainer/BrightnessContainer/BrightnessSlider" to="." method="_on_brightness_slider_value_changed"]
+[connection signal="drag_ended" from="VBoxContainer/MusicContainer/MusicSlider" to="." method="_on_music_slider_drag_ended"]
+[connection signal="value_changed" from="VBoxContainer/MusicContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="drag_ended" from="VBoxContainer/SFXContainer/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="value_changed" from="VBoxContainer/SFXContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

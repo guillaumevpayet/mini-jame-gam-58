@@ -67,7 +67,7 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 
 func _emit_score_and_disappear(score: int):
 	score_obtained.emit(score)
-	var sound_effect: SoundEffect = sound_effect_scene.instantiate()
+	var sound_effect: BeatInteractionEffect = sound_effect_scene.instantiate()
 	sound_effect.position = position
 	get_parent().add_child(sound_effect)
 	
