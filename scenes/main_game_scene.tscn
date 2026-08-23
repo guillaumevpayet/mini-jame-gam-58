@@ -1,19 +1,25 @@
 [gd_scene format=3 uid="uid://ge7ns64lrjxs"]
 
 [ext_resource type="Script" uid="uid://7yhetykehgr5" path="res://scripts/main_game_scene.gd" id="1_ilxj7"]
-[ext_resource type="Resource" uid="uid://cam32hm30e7h0" path="res://resources/songs/demo_song/rhythm_song.tres" id="2_snln7"]
 [ext_resource type="PackedScene" uid="uid://nskf2kc52kf" path="res://scenes/beat_marker.tscn" id="3_4a4v8"]
 [ext_resource type="PackedScene" uid="uid://bf37i1c68tifw" path="res://scenes/game_over_screen.tscn" id="4_ef5fi"]
 [ext_resource type="Texture2D" uid="uid://g634qog2nadv" path="res://assets/Anvil surface.png" id="5_4a4v8"]
 [ext_resource type="Texture2D" uid="uid://ck0dnelt8qjhm" path="res://assets/shortsword sprite.png" id="5_i4o3e"]
-[ext_resource type="AudioStream" uid="uid://d4j4w6gsd4b4m" path="res://resources/songs/demo_song/mournay_battle_start.ogg" id="6_ilxj7"]
+[ext_resource type="AudioStream" uid="uid://bxqsfrod5jouy" path="res://resources/songs/song_1/bs_1_no_perc.ogg" id="7_cofsh"]
 [ext_resource type="SpriteFrames" uid="uid://3s8i7vi63mrx" path="res://resources/combo_frames.tres" id="8_ef5fi"]
+[ext_resource type="AudioStream" uid="uid://cbwqcwlk2hsw0" path="res://resources/songs/song_1/bs_1_perc_only.ogg" id="8_u2xxy"]
 [ext_resource type="Script" uid="uid://don0g2v2togm4" path="res://scripts/score_label.gd" id="9_ef5fi"]
 [ext_resource type="Script" uid="uid://cs83qpg1tds71" path="res://scripts/furnace.gd" id="9_i4o3e"]
 
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_cofsh"]
+stream_count = 2
+stream_0/stream = ExtResource("7_cofsh")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("8_u2xxy")
+stream_1/volume = 0.0
+
 [node name="MainGameScene" type="Node" unique_id=1377299564]
 script = ExtResource("1_ilxj7")
-song = ExtResource("2_snln7")
 beat_marker = ExtResource("3_4a4v8")
 gameOverScreenScene = ExtResource("4_ef5fi")
 time_before_beat = 1.0
@@ -29,8 +35,8 @@ rotation = 0.56463325
 scale = Vector2(5.8836513, 5.8836513)
 texture = ExtResource("5_i4o3e")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=87947750]
-stream = ExtResource("6_ilxj7")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1679130757]
+stream = SubResource("AudioStreamSynchronized_cofsh")
 autoplay = true
 
 [node name="Furnace" type="AnimatedSprite2D" parent="." unique_id=1172992848]

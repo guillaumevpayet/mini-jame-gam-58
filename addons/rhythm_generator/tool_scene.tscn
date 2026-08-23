@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://c63vto2yvfm18"]
 
 [ext_resource type="Script" uid="uid://dq83dvt1odbbh" path="res://addons/rhythm_generator/rhythm_plugin_tool.gd" id="1_g17q7"]
-[ext_resource type="AudioStream" uid="uid://d4j4w6gsd4b4m" path="res://resources/songs/demo_song/mournay_battle_start.ogg" id="2_ktm6w"]
+[ext_resource type="AudioStream" uid="uid://bcf4myp6b5na8" path="res://resources/songs/song_1/song_1_perc_aud.wav" id="2_pblq6"]
+[ext_resource type="Texture2D" uid="uid://ch504los04mba" path="res://resources/songs/song_1/mask.png" id="3_pblq6"]
 
-[node name="ToolScene" type="Control" unique_id=639182694 node_paths=PackedStringArray("audio_player")]
+[node name="ToolScene" type="Control" unique_id=639182694]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,12 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_g17q7")
-ogg_stream = ExtResource("2_ktm6w")
-audio_player = NodePath("AudioStreamPlayer")
-freq_end = 250.0
-output_directory = "res://resources/songs/demo_song"
-MaxRadius = 800.0
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=466747240]
-stream = ExtResource("2_ktm6w")
-bus = &"MusicVisualiser"
+wav_stream = ExtResource("2_pblq6")
+output_directory = "res://resources/songs/song_1"
+mask_texture = ExtResource("3_pblq6")
+min_proximity = 100.0

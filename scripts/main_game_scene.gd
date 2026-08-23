@@ -22,20 +22,22 @@ var _next_timing_window_index: int
 var _score: int
 var _miss_streak: int = 0
 var _combo: int = 0
-
+var _song_timings: Array[RhythmTimingWindow]
 
 func _ready() -> void:
 	score_changed.emit(_score, song.minimum_target_score)
 	combo_changed.emit(_combo)
+	_song_timings = song.timing_windows
+	_song_timings.sort_custom(func(a: RhythmTimingWindow, b: RhythmTimingWindow): return a.timestamp < b.timestamp)
 
 func _process(_delta: float) -> void:
 	var playback_position: float = _audio_stream_player.get_playback_position()
 	var half_delta: float = 0.5 * _delta
 
-	if _next_timing_window_index >= song.timing_windows.size():
+	if _next_timing_window_index >= _song_timings.size():
 		return
 	
-	var timing_window: RhythmTimingWindow = song.timing_windows[_next_timing_window_index]
+	var timing_window: RhythmTimingWindow = _song_timings[_next_timing_window_index]
 	
 	if playback_position > timing_window.timestamp - time_before_beat:
 		_create_beat_marker(timing_window.position)

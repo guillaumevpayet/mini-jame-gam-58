@@ -3,175 +3,131 @@ extends Control
 class_name RhythmPluginTool
 
 @export_category("Audio Input")
-@export var ogg_stream: AudioStreamOggVorbis
+@export var wav_stream: AudioStreamWAV
 
-@export_category("Bus Settings")
-@export_range(0, 10) var bus_idx: int = 1
-@export_range(0, 100) var effect_idx: int = 0
-@export var audio_player: AudioStreamPlayer
 @export_category("Configuration")
-@export_range(20.0, 50000.0) var freq_start: float = 20.0
-@export_range(20.0, 50000.0) var freq_end: float = 20000.0
-@export_range(0.001, 1.0) var energy_threshold: float = 0.08
-@export_range(1, 10) var sample_amt: int = 3
-@export_tool_button("Generate Rhythm Resource", "Callable") var generation_action = _on_generate_pressed
+@export var sensitivity: float = 15.0 # 0-100 threshold
+@export_range(0.01, 1.0) var hit_cooldown: float = 0.15 
+@export_range(-0.1, 0.1) var timestamp_offset: float = 0.0
 
 @export_category("Output")
 @export_dir var output_directory: String = "res://resources/songs"
-@export_category("Hit Marker Positioning")
-@export var MinRadius: float = 100.0:
-	set(value):
-		if value > MaxRadius:
-			printerr("Error: MinRadius cannot be greater than MaxRadius")
-			return
-		MinRadius = value
-@export var MaxRadius: float = 200.0:
-	set(value):
-		if value < MinRadius:
-			printerr("Error: MaxRadius cannot be less than MinRadius")
-			return
-		MaxRadius = value
 
-var spectrum_instance: AudioEffectSpectrumAnalyzerInstance
+@export_category("Hit Marker Positioning")
+@export var mask_texture: Texture2D
+@export var min_proximity: float = 50.0
+
+@export_tool_button("Generate Rhythm Resource", "Callable") var generation_action = _on_generate_pressed
+
+var is_analyzing: bool = false
+var marker_history: Array[Vector2] = []
 
 func _on_generate_pressed() -> void:
 	if Engine.is_editor_hint():
 		_generate_resource()
 
-func _ready() -> void:
-	if Engine.is_editor_hint():
-		spectrum_instance = AudioServer.get_bus_effect_instance(bus_idx, effect_idx)
-
-var is_analyzing: bool = false
-var current_song: RhythmSong
-var is_in_window: bool = false
-var window_start_time: float = 0.0
-var window_end_time: float = 0.0
-
-var energy_accumulator: float = 0.0
-var samples_in_accumulator: int = 0
-
-func _process(_delta: float) -> void:
-	if not is_analyzing:
-		return
-	
-	if not audio_player.playing:
-		_finalize_analysis()
-		return
-	
-	var magnitude = spectrum_instance.get_magnitude_for_frequency_range(freq_start, freq_end).length()
-	energy_accumulator += magnitude
-	samples_in_accumulator += 1
-	
-	# Check stable average every sample_amt samples
-	if samples_in_accumulator >= sample_amt:
-		var average_magnitude = energy_accumulator / samples_in_accumulator
-		energy_accumulator = 0.0
-		samples_in_accumulator = 0
-		
-		var current_time = audio_player.get_playback_position()
-		
-		if average_magnitude > energy_threshold:
-			if not is_in_window:
-				is_in_window = true
-				window_start_time = current_time
-			window_end_time = current_time
-		else:
-			if is_in_window:
-				# Period ended, create window
-				is_in_window = false
-				_add_window(window_start_time, window_end_time)
-
 func _generate_resource() -> void:
-	if not ogg_stream:
-		push_error("Please assign an AudioStreamOggVorbis to ogg_stream")
-		return
-	if not audio_player:
-		push_error("Please assign an AudioStreamPlayer")
+	if not wav_stream:
+		push_error("Please assign a valid AudioStreamWAV resource")
 		return
 	
-	# Start playback
-	audio_player.stop()
-	audio_player.seek(0.0)
-	spectrum_instance = AudioServer.get_bus_effect_instance(bus_idx, effect_idx)
-	audio_player.play()
+	# Extract raw PCM data
+	var pcm_data = wav_stream.data
+	if pcm_data.is_empty():
+		push_error("AudioStreamWAV data is empty")
+		return
 	
-	current_song = RhythmSong.new()
+	# Determine settings from the resource
+	var sample_rate = wav_stream.mix_rate
+	var is_stereo = wav_stream.stereo
+	var format = wav_stream.format 
+	var bytes_per_sample = 2
+	var channels = 2 if is_stereo else 1
+	var frame_size = bytes_per_sample * channels
+	
+	var current_song = RhythmSong.new()
 	current_song.timing_windows = [] as Array[RhythmTimingWindow]
-	is_in_window = false
-	is_analyzing = true
-	energy_accumulator = 0.0
-	samples_in_accumulator = 0
+	marker_history = []
+	
+	var last_hit_time: float = -1.0
+	var threshold = (sensitivity / 100.0) * 32768.0
+	
+	var max_found = 0.0
+	
+	for i in range(0, pcm_data.size(), frame_size):
+		if i + frame_size > pcm_data.size():
+			break
+		
+		var left = pcm_data.decode_s16(i)
+		var right = 0.0
+		if is_stereo:
+			right = pcm_data.decode_s16(i + 2)
+		
+		var amplitude = (abs(left) + abs(right)) / 2.0
+		if amplitude > max_found:
+			max_found = amplitude
+		
+		if amplitude > threshold:
+			var current_time = float(i) / (sample_rate * bytes_per_sample * channels)
+			if current_time - last_hit_time > hit_cooldown:
+				_add_hit(current_song, current_time)
+				last_hit_time = current_time
+	
+	print("Max amplitude: ", max_found)
+	_save_resource(current_song)
 
-func _finalize_analysis() -> void:
-	is_analyzing = false
-	
-	# Final check if window was active when song ended
-	if is_in_window:
-		is_in_window = false
-		_add_window(window_start_time, window_end_time)
-	
-	audio_player.stop()
-	
-	# Create a new, clean RhythmSong resource
-	var final_song = RhythmSong.new()
-	
-	# Sort windows by timestamp
-	current_song.timing_windows.sort_custom(func(a, b): return a.timestamp < b.timestamp)
-	
-	# Populate the new resource's timing windows
-	final_song.timing_windows = current_song.timing_windows
-	
-	# Generate filename based on audio stream name if possible, or fallback
-	var song_name = ogg_stream.resource_name if ogg_stream.resource_name != "" else "rhythm_song"
+func _save_resource(song: RhythmSong) -> void:
+	var song_name = wav_stream.resource_name if wav_stream.resource_name != "" else "rhythm_song"
 	var full_path = output_directory.path_join(song_name + ".tres")
 	
-	# Ensure directory exists before saving
 	var dir = DirAccess.open("res://")
 	if not dir.dir_exists(output_directory):
 		dir.make_dir_recursive(output_directory)
 		
-	var error = ResourceSaver.save(final_song, full_path)
+	var error = ResourceSaver.save(song, full_path)
 	if error != OK:
 		push_error("Failed to save resource: " + error_string(error))
 	else:
 		print("RhythmSong saved to " + full_path)
-	current_song = null
 
 func calculate_window_position(window: RhythmTimingWindow):
-	var viewport_width = ProjectSettings.get_setting("display/window/size/viewport_width")
-	var viewport_height = ProjectSettings.get_setting("display/window/size/viewport_height")
-	var screen_size = Vector2(viewport_width, viewport_height)
-	# 50px boundary
-	var min_x = 50
-	var max_x = screen_size.x - 50
-	var min_y = 50
-	var max_y = screen_size.y - 50
-	
-	# Randomization factoring MinRadius and MaxRadius
-	var distance = randf_range(MinRadius, MaxRadius)
-	var angle = randf_range(0, 2 * PI)
-	
-	var new_position = Vector2(
-		(screen_size.x / 2) + cos(angle) * distance,
-		(screen_size.y / 2) + sin(angle) * distance
-	)
-	
-	# Rejection sampling for boundary check
-	while new_position.x < min_x or new_position.x > max_x or \
-		  new_position.y < min_y or new_position.y > max_y:
-		angle = randf_range(0, 2 * PI)
-		distance = randf_range(MinRadius, MaxRadius)
-		new_position = Vector2(
-			(screen_size.x / 2) + cos(angle) * distance,
-			(screen_size.y / 2) + sin(angle) * distance
-		)
-		
-	window.position = new_position
+	if not mask_texture:
+		var viewport_size = Vector2(get_viewport().size)
+		window.position = viewport_size / 2.0
+		return
 
-func _add_window(start: float, end: float) -> void:
-	# Define window based on the start and end of the burst
+	var image = mask_texture.get_image()
+	
+	var valid_pos = false
+	var new_position = Vector2.ZERO
+	var attempts = 0
+	
+	while not valid_pos and attempts < 100:
+		attempts += 1
+		var x = randi_range(0, image.get_width() - 1)
+		var y = randi_range(0, image.get_height() - 1)
+		
+		# Assuming white (r > 0.5) is the valid area
+		if image.get_pixel(x, y).r > 0.5:
+			# Direct 1:1 mapping of pixel coordinate to screen position
+			new_position = Vector2(x, y)
+			
+			var too_close = false
+			for prev_pos in marker_history:
+				if new_position.distance_to(prev_pos) < min_proximity:
+					too_close = true
+					break
+			
+			if not too_close:
+				valid_pos = true
+	
+	window.position = new_position
+	marker_history.append(new_position)
+	if marker_history.size() > 3:
+		marker_history.pop_front()
+
+func _add_hit(song: RhythmSong, timestamp: float) -> void:
 	var window = RhythmTimingWindow.new()
-	window.timestamp = (start + end) / 2.0
+	window.timestamp = timestamp - timestamp_offset
 	calculate_window_position(window)
-	current_song.timing_windows.append(window)
+	song.timing_windows.append(window)
