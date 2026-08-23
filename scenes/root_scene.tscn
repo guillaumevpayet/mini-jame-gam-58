@@ -1,9 +1,17 @@
 [gd_scene format=3 uid="uid://cwdsbytvi8rys"]
 
+[ext_resource type="Script" uid="uid://dcs1xumajfwgc" path="res://scripts/root_scene.gd" id="1_cgud6"]
 [ext_resource type="PackedScene" uid="uid://ge7ns64lrjxs" path="res://scenes/main_game_scene.tscn" id="1_kc8py"]
-[ext_resource type="Resource" uid="uid://d0770sn4iiq37" path="res://resources/songs/song_1/rhythm_song.tres" id="2_cgud6"]
+[ext_resource type="PackedScene" uid="uid://cj2caray54lny" path="res://scenes/title_screen.tscn" id="2_sfakk"]
+[ext_resource type="PackedScene" uid="uid://bf37i1c68tifw" path="res://scenes/game_over_screen.tscn" id="4_docf2"]
 
-[node name="Main" type="Node2D" unique_id=1053608468]
+[node name="RootScene" type="Node" unique_id=302167452]
+script = ExtResource("1_cgud6")
+title_screen_scene = ExtResource("2_sfakk")
+main_game_scene = ExtResource("1_kc8py")
+game_over_screen_scene = ExtResource("4_docf2")
 
-[node name="BeatMarkerMaker" parent="." unique_id=1377299564 instance=ExtResource("1_kc8py")]
-song = ExtResource("2_cgud6")
+[node name="TitleScreen" parent="." unique_id=1742133454 instance=ExtResource("2_sfakk")]
+
+[connection signal="open_settings_menu" from="TitleScreen" to="." method="_on_title_screen_open_settings_menu"]
+[connection signal="start_game" from="TitleScreen" to="." method="_on_title_screen_start_game"]

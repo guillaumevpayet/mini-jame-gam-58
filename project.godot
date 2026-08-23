@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Mini Jame Gam 58"
+config/name="Smithing Beats"
 config/version="0.1"
 run/main_scene="uid://cwdsbytvi8rys"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/image="uid://bmladut4qlgbm"
 config/icon="res://icon.svg"
 
 [audio]
