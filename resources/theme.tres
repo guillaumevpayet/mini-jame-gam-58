@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://bv5pyfb4sv77p"]
+
+[ext_resource type="StyleBox" uid="uid://br1v74sxk3fgb" path="res://resources/panel_style_box_texture.tres" id="1_d4nwg"]
+
+[resource]
+Button/font_sizes/font_size = 32
+Button/styles/hover = ExtResource("1_d4nwg")
+Button/styles/normal = ExtResource("1_d4nwg")

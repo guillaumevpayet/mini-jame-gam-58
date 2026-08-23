@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cj2caray54lny"]
+
+[ext_resource type="Script" uid="uid://chkh4uqx36fyl" path="res://scripts/title_screen.gd" id="1_mgrm8"]
+[ext_resource type="Texture2D" uid="uid://ctuqkqphndxg3" path="res://assets/stone smithing room test.png" id="1_s4lrb"]
+[ext_resource type="Texture2D" uid="uid://bmladut4qlgbm" path="res://assets/Smithing Beats Title.png" id="2_mgrm8"]
+[ext_resource type="Theme" uid="uid://bv5pyfb4sv77p" path="res://resources/theme.tres" id="3_dc4i4"]
+
+[node name="TitleScreen" type="Control" unique_id=1742133454]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mgrm8")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=140712360]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_s4lrb")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1059980644]
+layout_mode = 0
+offset_left = 158.04
+offset_top = 21.795
+offset_right = 398.04007
+offset_bottom = 101.795
+scale = Vector2(4, 4)
+texture = ExtResource("2_mgrm8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=43649231]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -149.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1207119187]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_dc4i4")
+text = "Start!"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=236043499]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_dc4i4")
+text = "Settings"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

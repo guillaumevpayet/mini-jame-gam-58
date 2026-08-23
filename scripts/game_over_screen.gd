@@ -2,9 +2,22 @@ extends Control
 class_name GameOverScreen
 
 
-@onready var _label: Label = $Label
+signal restart_game
 
 
+var _win: bool
 
-func set_label_text(new_text: String) -> void:
-	_label.text = new_text
+
+func init(win: bool) -> void:
+	_win = win
+
+
+func _ready() -> void:
+	if _win:
+		$Label.text = "You win!"
+	else:
+		$Label.text = "You lose"
+
+
+func _on_try_again_button_pressed() -> void:
+	restart_game.emit()

@@ -1,9 +1,9 @@
 extends Node
+class_name MainGameScene
 
 
 @export var song: RhythmSong
 @export var beat_marker: PackedScene
-@export var gameOverScreenScene: PackedScene
 
 ## Time to spawn the beat marker before the beat, in seconds.
 @export var time_before_beat: float
@@ -13,6 +13,7 @@ extends Node
 
 signal score_changed(score: int, minimum_target_score: int)
 signal combo_changed(combo: int)
+signal game_over(win: bool)
 
 
 @onready var _audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
@@ -74,22 +75,8 @@ func _on_BeatMarker_score_obtained(score: int):
 	combo_changed.emit(_combo)
 
 	if _miss_streak >= miss_tolerance:
-		_end_game(false)
+		game_over.emit(false)
 
 
 func _on_audio_stream_player_2d_finished() -> void:
-	_end_game(_score >= song.minimum_target_score)
-
-func _end_game(win: bool):
-	var parent: Node = get_parent()
-	parent.remove_child(self)
-
-	var gameOverScreen: GameOverScreen = gameOverScreenScene.instantiate()
-	parent.add_child(gameOverScreen)
-
-	if win:
-		gameOverScreen.set_label_text("You win!")
-	else:
-		gameOverScreen.set_label_text("You lose")
-
-	queue_free()
+	game_over.emit(_score >= song.minimum_target_score)
