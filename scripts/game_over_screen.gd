@@ -22,8 +22,10 @@ func init(perfect_count: int, ok_count: int, miss_count: int, win: bool) -> void
 	var total: int = perfect_count + ok_count + miss_count
 	var percentage_perfect: float = float(perfect_count) / total
 	var percentage_ok: float = float(ok_count) / total
-	var accuracy: float = ((perfect_count * 1) + (ok_count * 1/3) + (miss_count * 0)) / total
-
+	var accuracy: float = ((float(perfect_count) * 1) + (float(ok_count) * 1/3) + (float(miss_count) * 0)) / total
+	print((perfect_count * 1) + (ok_count * 1/3) + (miss_count * 0))
+	print((perfect_count * 1) + (ok_count * 1/3))
+	print(total)
 	if perfect_count == total:
 		_grade = "SS"
 	elif accuracy >= 0.9:
